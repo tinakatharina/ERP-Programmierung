@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\BusPartnerEmployee\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +82,91 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\BusPartnerEmployee\document.wsdl" />
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BapiServiceTransactionCommitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BapiServiceTransactionCommitResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BapiServiceTransactionRollbackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BapiServiceTransactionRollbackResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeChangePasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCheckPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCheckPasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCreatePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCreatePasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeCreateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeDeletePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeDeletePasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeDisplayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeDisplayResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeEditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeEditResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetInternalNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetInternalNumberResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeInitPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BusPartnerEmployee\WindowsFormsApp1.BusPartnerEmployee.BusPartnerEmployeeInitPasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +179,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BusPartnerEmployee\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BusPartnerEmployee\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BusPartnerEmployee\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BusPartnerEmployee\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

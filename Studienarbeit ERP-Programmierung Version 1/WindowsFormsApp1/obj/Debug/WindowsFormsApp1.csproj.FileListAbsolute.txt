@@ -9,3 +9,14 @@ C:\Users\tina8\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsF
 C:\Users\tina8\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\tina8\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\tina8\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\Informatik-Studium\GitERP\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

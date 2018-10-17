@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_BN_Z_HH_BusPartnerEmployee_01">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedXMLTransfer uri="http://www.w3.org/2004/08/soap/features/http-optimization" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication />
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_Z_HH_BusPartnerEmployee_01">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>true</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeCheckExistence">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeChangePassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeGetInternalNumber">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeEdit">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeDisplay">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeCreate">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeGetList">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeCheckPassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeCreatePassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeDeletePassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeGetPassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BapiServiceTransactionRollback">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">DoRollback</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BusPartnerEmployeeInitPassword">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_BapiServiceTransactionCommit">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">DoCommit</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char241">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="241" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="lang">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:complexType name="BapicontactIdrange">
+        <xsd:sequence>
+          <xsd:element name="Sign" type="n0:char1" />
+          <xsd:element name="Option" type="n0:char2" />
+          <xsd:element name="Low" type="n0:numeric10" />
+          <xsd:element name="High" type="n0:numeric10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BapicontactAddressdata">
+        <xsd:sequence>
+          <xsd:element name="Partneremployeeid" type="n0:numeric10" />
+          <xsd:element name="Customer" type="n0:char10" />
+          <xsd:element name="Lastname" type="n0:char40" />
+          <xsd:element name="Firstname" type="n0:char40" />
+          <xsd:element name="Sex" type="n0:char1" />
+          <xsd:element name="TitleP" type="n0:char30" />
+          <xsd:element name="LanguP" type="n0:lang" />
+          <xsd:element name="LangupIso" type="n0:char2" />
+          <xsd:element name="Country" type="n0:char3" />
+          <xsd:element name="Countryiso" type="n0:char2" />
+          <xsd:element name="City" type="n0:char40" />
+          <xsd:element name="PostlCod1" type="n0:char10" />
+          <xsd:element name="Region" type="n0:char3" />
+          <xsd:element name="Street" type="n0:char60" />
+          <xsd:element name="Tel1Numbr" type="n0:char30" />
+          <xsd:element name="FaxNumber" type="n0:char30" />
+          <xsd:element name="Function" type="n0:char40" />
+          <xsd:element name="Sort1P" type="n0:char20" />
+          <xsd:element name="Address" type="n0:char10" />
+          <xsd:element name="PersNo" type="n0:char10" />
+          <xsd:element name="EMail" type="n0:char241" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapireturn1">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="Id" type="n0:char20" />
+          <xsd:element name="Number" type="n0:numeric3" />
+          <xsd:element name="Message" type="n0:char220" />
+          <xsd:element name="LogNo" type="n0:char20" />
+          <xsd:element name="LogMsgNo" type="n0:numeric6" />
+          <xsd:element name="MessageV1" type="n0:char50" />
+          <xsd:element name="MessageV2" type="n0:char50" />
+          <xsd:element name="MessageV3" type="n0:char50" />
+          <xsd:element name="MessageV4" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapiret1">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="Id" type="n0:char20" />
+          <xsd:element name="Number" type="n0:numeric3" />
+          <xsd:element name="Message" type="n0:char220" />
+          <xsd:element name="LogNo" type="n0:char20" />
+          <xsd:element name="LogMsgNo" type="n0:numeric6" />
+          <xsd:element name="MessageV1" type="n0:char50" />
+          <xsd:element name="MessageV2" type="n0:char50" />
+          <xsd:element name="MessageV3" type="n0:char50" />
+          <xsd:element name="MessageV4" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BapicontactNumber">
+        <xsd:sequence>
+          <xsd:element name="Contact" type="n0:numeric10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapireturn">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="Code" type="n0:char5" />
+          <xsd:element name="Message" type="n0:char220" />
+          <xsd:element name="LogNo" type="n0:char20" />
+          <xsd:element name="LogMsgNo" type="n0:numeric6" />
+          <xsd:element name="MessageV1" type="n0:char50" />
+          <xsd:element name="MessageV2" type="n0:char50" />
+          <xsd:element name="MessageV3" type="n0:char50" />
+          <xsd:element name="MessageV4" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapiuswsta">
+        <xsd:sequence>
+          <xsd:element name="Objtype" type="n0:char10" />
+          <xsd:element name="Objid" type="n0:char16" />
+          <xsd:element name="Service" type="xsd:unsignedByte" />
+          <xsd:element name="State" type="n0:char1" />
+          <xsd:element name="Uiddate" type="n0:date10" />
+          <xsd:element name="Validto" type="n0:date10" />
+          <xsd:element name="Lcnt" type="xsd:unsignedByte" />
+          <xsd:element name="Ldate" type="n0:date10" />
+          <xsd:element name="Ltime" type="n0:time" />
+          <xsd:element name="Updpass" type="n0:date10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapiret2">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="Id" type="n0:char20" />
+          <xsd:element name="Number" type="n0:numeric3" />
+          <xsd:element name="Message" type="n0:char220" />
+          <xsd:element name="LogNo" type="n0:char20" />
+          <xsd:element name="LogMsgNo" type="n0:numeric6" />
+          <xsd:element name="MessageV1" type="n0:char50" />
+          <xsd:element name="MessageV2" type="n0:char50" />
+          <xsd:element name="MessageV3" type="n0:char50" />
+          <xsd:element name="MessageV4" type="n0:char50" />
+          <xsd:element name="Parameter" type="n0:char32" />
+          <xsd:element name="Row" type="xsd:int" />
+          <xsd:element name="Field" type="n0:char30" />
+          <xsd:element name="System" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfBapicontactIdrange">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:BapicontactIdrange" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfBapicontactAddressdata">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:BapicontactAddressdata" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfBapicontactNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:BapicontactNumber" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfBapiuswsta">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Bapiuswsta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BusPartnerEmployeeGetList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="CommForDisplay" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Contactpersononly" type="n0:char1" />
+            <xsd:element name="IdRange" type="tns:TableOfBapicontactIdrange" />
+            <xsd:element minOccurs="0" name="MaxRows" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeGetListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AddressData" type="tns:TableOfBapicontactAddressdata" />
+            <xsd:element name="Return" type="tns:Bapireturn1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCreate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Customer" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Vendor" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCreateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+            <xsd:element name="Partneremployee" type="n0:numeric10" />
+            <xsd:element name="Return" type="tns:Bapiret1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeDisplay">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeDisplayResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapiret1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeEdit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeEditResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Customer" type="n0:char10" />
+            <xsd:element name="Return" type="tns:Bapiret1" />
+            <xsd:element name="Vendor" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeGetInternalNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Quantity" type="xsd:unsignedByte" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeGetInternalNumberResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Contact" type="tns:TableOfBapicontactNumber" />
+            <xsd:element name="ContactId" type="n0:numeric10" />
+            <xsd:element name="Quantity" type="xsd:unsignedByte" />
+            <xsd:element name="Return" type="tns:Bapireturn1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeChangePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NewPassword" type="n0:char16" />
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+            <xsd:element name="Password" type="n0:char16" />
+            <xsd:element name="VerifyPassword" type="n0:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeChangePasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCheckExistence">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCheckExistenceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Customer" type="n0:char10" />
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCheckPassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+            <xsd:element name="Password" type="n0:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCheckPasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCreatePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeCreatePasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeDeletePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeDeletePasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeGetPassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+            <xsd:element name="Statusinfo" type="tns:TableOfBapiuswsta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeGetPasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapireturn" />
+            <xsd:element name="Statusinfo" type="tns:TableOfBapiuswsta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeInitPassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PartnerEmployeeId" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BusPartnerEmployeeInitPasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Password" type="n0:char16" />
+            <xsd:element name="Return" type="tns:Bapireturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BapiServiceTransactionCommit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="WAIT" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BapiServiceTransactionCommitResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapiret2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BapiServiceTransactionRollback">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BapiServiceTransactionRollbackResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Bapiret2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BusPartnerEmployeeGetList">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeGetList" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeGetListResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCreate">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeCreate" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCreateResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeDisplay">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeDisplay" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeDisplayResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeDisplayResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeEdit">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeEdit" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeEditResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeGetInternalNumber">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeGetInternalNumber" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeGetInternalNumberResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeGetInternalNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeChangePassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeChangePasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCheckExistence">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeCheckExistence" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCheckExistenceResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeCheckExistenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCheckPassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeCheckPassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCheckPasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeCheckPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCreatePassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeCreatePassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeCreatePasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeCreatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeDeletePassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeDeletePassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeDeletePasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeDeletePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeGetPassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeGetPassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeGetPasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeGetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeInitPassword">
+    <wsdl:part name="parameters" element="tns:BusPartnerEmployeeInitPassword" />
+  </wsdl:message>
+  <wsdl:message name="BusPartnerEmployeeInitPasswordResponse">
+    <wsdl:part name="parameter" element="tns:BusPartnerEmployeeInitPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="BapiServiceTransactionCommit">
+    <wsdl:part name="parameters" element="tns:BapiServiceTransactionCommit" />
+  </wsdl:message>
+  <wsdl:message name="BapiServiceTransactionCommitResponse">
+    <wsdl:part name="parameter" element="tns:BapiServiceTransactionCommitResponse" />
+  </wsdl:message>
+  <wsdl:message name="BapiServiceTransactionRollback">
+    <wsdl:part name="parameters" element="tns:BapiServiceTransactionRollback" />
+  </wsdl:message>
+  <wsdl:message name="BapiServiceTransactionRollbackResponse">
+    <wsdl:part name="parameter" element="tns:BapiServiceTransactionRollbackResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Z_HH_BusPartnerEmployee_01">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_Z_HH_BusPartnerEmployee_01" />
+    </wsp:Policy>
+    <wsdl:operation name="BusPartnerEmployeeGetList">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeGetList" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeGetList" />
+      <wsdl:output message="tns:BusPartnerEmployeeGetListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCreate">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeCreate" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeCreate" />
+      <wsdl:output message="tns:BusPartnerEmployeeCreateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeDisplay">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeDisplay" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeDisplay" />
+      <wsdl:output message="tns:BusPartnerEmployeeDisplayResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeEdit">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeEdit" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeEdit" />
+      <wsdl:output message="tns:BusPartnerEmployeeEditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeGetInternalNumber">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeGetInternalNumber" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeGetInternalNumber" />
+      <wsdl:output message="tns:BusPartnerEmployeeGetInternalNumberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeChangePassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeChangePassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeChangePassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeChangePasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCheckExistence">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeCheckExistence" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeCheckExistence" />
+      <wsdl:output message="tns:BusPartnerEmployeeCheckExistenceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCheckPassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeCheckPassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeCheckPassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeCheckPasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCreatePassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeCreatePassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeCreatePassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeCreatePasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeDeletePassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeDeletePassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeDeletePassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeDeletePasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeGetPassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeGetPassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeGetPassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeGetPasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeInitPassword">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BusPartnerEmployeeInitPassword" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BusPartnerEmployeeInitPassword" />
+      <wsdl:output message="tns:BusPartnerEmployeeInitPasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BapiServiceTransactionCommit">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BapiServiceTransactionCommit" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BapiServiceTransactionCommit" />
+      <wsdl:output message="tns:BapiServiceTransactionCommitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="BapiServiceTransactionRollback">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_BapiServiceTransactionRollback" />
+      </wsp:Policy>
+      <wsdl:input message="tns:BapiServiceTransactionRollback" />
+      <wsdl:output message="tns:BapiServiceTransactionRollbackResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Z_HH_BusPartnerEmployee_01" type="tns:Z_HH_BusPartnerEmployee_01">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_Z_HH_BusPartnerEmployee_01" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BusPartnerEmployeeGetList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCreate">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeDisplay">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeEdit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeGetInternalNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeChangePassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCheckExistence">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCheckPassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeCreatePassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeDeletePassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeGetPassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusPartnerEmployeeInitPassword">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BapiServiceTransactionCommit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BapiServiceTransactionRollback">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Z_HH_BUSPARTNEREMPLOYEE_01Service">
+    <wsdl:port name="Z_HH_BusPartnerEmployee_01" binding="tns:Z_HH_BusPartnerEmployee_01">
+      <soap:address location="http://i48lp1.in.tum.de:8048/sap/bc/srt/rfc/sap/z_hh_buspartneremployee_01/902/z_hh_buspartneremployee_01/z_hh_buspartneremployee_01" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
