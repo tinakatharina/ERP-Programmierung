@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Connected Services\BusPartnerEmployee\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

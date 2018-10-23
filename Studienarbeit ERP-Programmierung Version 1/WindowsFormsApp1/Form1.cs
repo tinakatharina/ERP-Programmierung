@@ -20,11 +20,8 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Z_HH_BusPartnerEmployee_01Client client = new Z_HH_BusPartnerEmployee_01Client();
-            client.ClientCredentials.UserName.UserName = "IDES-012";
-            client.ClientCredentials.UserName.Password = "erpprogrammierung";
-            client.Open();
-
+            BusPartnerEmployeeController controller = new BusPartnerEmployeeController();
+            controller.Login();
         }
     }
 }
