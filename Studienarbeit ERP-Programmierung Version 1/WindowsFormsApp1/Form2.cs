@@ -16,6 +16,9 @@ namespace WindowsFormsApp1
     {
         private BusPartnerEmployeeController controller = new BusPartnerEmployeeController();
         private BusPartnerEmployeeDataProvider provider = new BusPartnerEmployeeDataProvider();
+        private Timer timer = new Timer();
+
+
         public Form2()
         {
             InitializeComponent();
@@ -92,6 +95,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
             BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
             foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
             {
@@ -100,6 +104,7 @@ namespace WindowsFormsApp1
                 listView1.Items.Add(viewItem);
             }
             listView1.Refresh();
+            listView1.FullRowSelect = true;
         }
 
         private void Mitarbeiter_Click(object sender, EventArgs e)
@@ -153,5 +158,66 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TimerStop();
+            if (listView1.SelectedItems.Count > 0)
+            {
+                String selected = listView1.SelectedItems[0].Text;
+                BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
+                foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
+                {
+                    if(data.Partneremployeeid == selected)
+                    {
+                        textBox4.Text = data.Firstname;
+                        textBox2.Text = data.Lastname;
+                        textBox3.Text = data.EMail;
+                        textBox12.Text = data.Tel1Numbr;
+                        textBox11.Text = data.FaxNumber;
+                        textBox10.Text = data.PersNo;
+                        textBox9.Text = data.Function;
+                        textBox1.Text = data.Customer;
+                        textBox19.Text = data.Street;
+                        textBox8.Text = data.PostlCod1;
+                        textBox7.Text = data.City;
+                        textBox14.Text = data.Region;
+                        textBox17.Text = data.Country;
+                        textBox18.Text = data.Countryiso;
+                        textBox16.Text = data.Address;
+                        comboBox1.SelectedIndex = comboBox1.FindStringExact(data.TitleP);
+                    }
+                }
+
+            } else
+            {
+                TimerStart();
+                infoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+            }
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void TimerStart()
+        {
+            timer.Interval = 10000;
+            timer.Tick += new EventHandler(hideLabel);
+            timer.Start();
+        }
+
+        public void TimerStop()
+        {
+            timer.Stop();
+            infoLabel.Text = "";
+        }
+
+        void hideLabel(object sender, EventArgs e)
+        {
+            infoLabel.Text = "";
+        }
+
     }
 }
