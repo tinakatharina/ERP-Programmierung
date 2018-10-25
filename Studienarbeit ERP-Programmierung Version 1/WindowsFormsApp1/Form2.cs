@@ -118,8 +118,10 @@ namespace WindowsFormsApp1
             listView1.Columns.Add(columnKeys[1], columnTexts[1]);
             listView1.Columns.Add(columnKeys[2], columnTexts[2]);
 
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-  
+            listView1.Columns[0].Width = 100;
+            listView1.Columns[1].Width = 70;
+            listView1.Columns[2].Width = 90;
+
         }
 
 
