@@ -14,16 +14,16 @@ namespace WindowsFormsApp1
         public void Login()
         {
             dataProvider.Login();
-            Form2 f = new Form2();
-            Form f1 = Form.ActiveForm;
-            f1.Hide();
-            f.Show();  
+            MainView mainView = new MainView();
+            Form activeForm = Form.ActiveForm;
+            activeForm.Hide();
+            mainView.Show();  
         }
 
         public void Logout()
         {
-         //   Form f1 = Form.ActiveForm;
-         //   f1.Close();
+         //   Form activeForm = Form.ActiveForm;
+         //   activeForm.Close();
          // Müssten wir noch iwie machen 
 
         }

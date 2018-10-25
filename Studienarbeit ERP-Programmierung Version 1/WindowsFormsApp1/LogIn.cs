@@ -11,17 +11,20 @@ using WindowsFormsApp1.BusPartnerEmployee;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class LogIn : Form
     {
-        public Form1()
+        public LogIn()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_click(object sender, EventArgs e)
         {
             BusPartnerEmployeeController controller = new BusPartnerEmployeeController();
             controller.Login();
         }
+
+        private void loginPicture_click(object sender, EventArgs e)
+        {}
     }
 }
