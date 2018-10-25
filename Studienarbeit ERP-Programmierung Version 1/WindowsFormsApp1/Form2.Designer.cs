@@ -30,6 +30,7 @@
         {
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Passwoerter = new System.Windows.Forms.TabPage();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.button15 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.Passwörter.SuspendLayout();
             this.Mitarbeiter.SuspendLayout();
             this.Passwoerter.SuspendLayout();
@@ -107,6 +107,14 @@
             this.Mitarbeiter.TabIndex = 0;
             this.Mitarbeiter.Text = "Mitarbeiter";
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(531, 76);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(357, 363);
+            this.listView1.TabIndex = 19;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,6 +146,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "Bestätigen";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label5
             // 
@@ -282,6 +291,15 @@
             this.Passwoerter.Text = "Passwörter";
             this.Passwoerter.UseVisualStyleBackColor = true;
             // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(523, 64);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(357, 370);
+            this.listView2.TabIndex = 18;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            // 
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -423,23 +441,6 @@
             this.label6.Size = new System.Drawing.Size(182, 25);
             this.label6.TabIndex = 3;
             this.label6.Text = "Liste der Mitarbeiter";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(531, 76);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(357, 363);
-            this.listView1.TabIndex = 19;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(523, 64);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(357, 370);
-            this.listView2.TabIndex = 18;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // Form2
             // 

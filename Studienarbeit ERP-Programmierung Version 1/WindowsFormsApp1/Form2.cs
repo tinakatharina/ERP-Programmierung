@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
+using WindowsFormsApp1.BusPartnerEmployee;
 
 namespace WindowsFormsApp1
 {
@@ -78,6 +79,14 @@ namespace WindowsFormsApp1
         private void button8_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Löschen");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+           
+
+       
         }
     }
 }
