@@ -35,7 +35,12 @@ namespace WindowsFormsApp1
 
         public void GetList()
         {
-           
+            BusPartnerEmployee.BusPartnerEmployeeGetListResponse response = dataProvider.GetList();
+
+
+
+
+
         }
 
     }

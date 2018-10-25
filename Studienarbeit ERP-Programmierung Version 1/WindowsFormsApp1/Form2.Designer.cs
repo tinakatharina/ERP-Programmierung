@@ -73,10 +73,10 @@
             this.Passwörter.Controls.Add(this.Mitarbeiter);
             this.Passwörter.Controls.Add(this.Passwoerter);
             this.Passwörter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passwörter.Location = new System.Drawing.Point(3, 1);
+            this.Passwörter.Location = new System.Drawing.Point(3, 12);
             this.Passwörter.Name = "Passwörter";
             this.Passwörter.SelectedIndex = 0;
-            this.Passwörter.Size = new System.Drawing.Size(919, 555);
+            this.Passwörter.Size = new System.Drawing.Size(1094, 631);
             this.Passwörter.TabIndex = 0;
             // 
             // Mitarbeiter
@@ -103,22 +103,25 @@
             this.Mitarbeiter.Location = new System.Drawing.Point(4, 34);
             this.Mitarbeiter.Name = "Mitarbeiter";
             this.Mitarbeiter.Padding = new System.Windows.Forms.Padding(3);
-            this.Mitarbeiter.Size = new System.Drawing.Size(911, 517);
+            this.Mitarbeiter.Size = new System.Drawing.Size(1086, 593);
             this.Mitarbeiter.TabIndex = 0;
             this.Mitarbeiter.Text = "Mitarbeiter";
+            this.Mitarbeiter.Click += new System.EventHandler(this.Mitarbeiter_Click);
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(531, 76);
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Location = new System.Drawing.Point(782, 98);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(357, 363);
+            this.listView1.Size = new System.Drawing.Size(280, 406);
             this.listView1.TabIndex = 19;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(531, 458);
+            this.button14.Location = new System.Drawing.Point(782, 536);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(131, 35);
             this.button14.TabIndex = 18;
@@ -129,7 +132,7 @@
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(757, 458);
+            this.button13.Location = new System.Drawing.Point(931, 536);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(131, 35);
             this.button13.TabIndex = 17;
@@ -140,7 +143,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(43, 343);
+            this.button5.Location = new System.Drawing.Point(15, 536);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(163, 35);
             this.button5.TabIndex = 14;
@@ -249,18 +252,19 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(782, 19);
+            this.button1.Location = new System.Drawing.Point(956, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Anzeigen";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(524, 29);
+            this.label1.Location = new System.Drawing.Point(768, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 25);
             this.label1.TabIndex = 0;
@@ -286,7 +290,7 @@
             this.Passwoerter.Location = new System.Drawing.Point(4, 34);
             this.Passwoerter.Name = "Passwoerter";
             this.Passwoerter.Padding = new System.Windows.Forms.Padding(3);
-            this.Passwoerter.Size = new System.Drawing.Size(911, 517);
+            this.Passwoerter.Size = new System.Drawing.Size(1086, 593);
             this.Passwoerter.TabIndex = 1;
             this.Passwoerter.Text = "Passwörter";
             this.Passwoerter.UseVisualStyleBackColor = true;
@@ -447,7 +451,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(921, 557);
+            this.ClientSize = new System.Drawing.Size(1099, 648);
             this.Controls.Add(this.Passwörter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";

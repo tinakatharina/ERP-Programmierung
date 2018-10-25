@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         public Form2()
         {
             InitializeComponent();
+            InitializeElements();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -87,6 +88,48 @@ namespace WindowsFormsApp1
            
 
        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
+            foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
+            {
+                String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
+                ListViewItem viewItem = new ListViewItem(employee);
+                listView1.Items.Add(viewItem);
+            }
+            listView1.Refresh();
+        }
+
+        private void Mitarbeiter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InitializeElements()
+        {
+            listView1.View = View.Details;
+
+            String[] columnKeys = { "employeeId", "firstName", "lastName" };
+            String[] columnTexts = { "ID", "Vorname", "Nachname" };
+          
+            listView1.Columns.Add(columnKeys[0], columnTexts[0]);
+            listView1.Columns.Add(columnKeys[1], columnTexts[1]);
+            listView1.Columns.Add(columnKeys[2], columnTexts[2]);
+
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+  
+        }
+
+
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
         }
     }
 }
