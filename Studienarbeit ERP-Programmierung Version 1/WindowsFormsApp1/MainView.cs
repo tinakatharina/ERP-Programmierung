@@ -67,30 +67,7 @@ namespace WindowsFormsApp1
             TimerStop();
             if (employeeListView.SelectedItems.Count > 0)
             {
-                String selected = employeeListView.SelectedItems[0].Text;
-                BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
-                foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
-                {
-                    if (data.Partneremployeeid == selected)
-                    {
-                        firstnameBox.Text = data.Firstname;
-                        lastnameBox.Text = data.Lastname;
-                        emailBox.Text = data.EMail;
-                        telBox.Text = data.Tel1Numbr;
-                        faxBox.Text = data.FaxNumber;
-                        persNrBox.Text = data.PersNo;
-                        functionBox.Text = data.Function;
-                        customerBox.Text = data.Customer;
-                        streetBox.Text = data.Street;
-                        plzBox.Text = data.PostlCod1;
-                        cityBox.Text = data.City;
-                        regionBox.Text = data.Region;
-                        countryBox.Text = data.Country;
-                        adressCodeBox.Text = data.Address;
-                        titleBox.SelectedIndex = titleBox.FindStringExact(data.TitleP);
-                    }
-                }
-
+                boxFill();
             }
             else
             {
@@ -101,7 +78,16 @@ namespace WindowsFormsApp1
 
         private void changeButton_click(object sender, EventArgs e)
         {
-            boxEditable();
+            TimerStop();
+            if(employeeListView.SelectedItems.Count >0)
+            {
+                boxFill();
+                boxEditable();
+            } else
+            {
+                TimerStart();
+                infoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+            }
         }
 
         private void createButton_click(object sender, EventArgs e)
@@ -224,6 +210,33 @@ namespace WindowsFormsApp1
             countryBox.Text = "";
             adressCodeBox.Text = "";
             titleBox.SelectedIndex = 0;
+        }
+
+        private void boxFill()
+        {
+            String selected = employeeListView.SelectedItems[0].Text;
+            BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
+            foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
+            {
+                if (data.Partneremployeeid == selected)
+                {
+                    firstnameBox.Text = data.Firstname;
+                    lastnameBox.Text = data.Lastname;
+                    emailBox.Text = data.EMail;
+                    telBox.Text = data.Tel1Numbr;
+                    faxBox.Text = data.FaxNumber;
+                    persNrBox.Text = data.PersNo;
+                    functionBox.Text = data.Function;
+                    customerBox.Text = data.Customer;
+                    streetBox.Text = data.Street;
+                    plzBox.Text = data.PostlCod1;
+                    cityBox.Text = data.City;
+                    regionBox.Text = data.Region;
+                    countryBox.Text = data.Country;
+                    adressCodeBox.Text = data.Address;
+                    titleBox.SelectedIndex = titleBox.FindStringExact(data.TitleP);
+                }
+            }
         }
     }
 }

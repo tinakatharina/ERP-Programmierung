@@ -665,6 +665,7 @@
             // 
             this.passwordWdhBox.Location = new System.Drawing.Point(167, 259);
             this.passwordWdhBox.Name = "passwordWdhBox";
+            this.passwordWdhBox.ReadOnly = true;
             this.passwordWdhBox.Size = new System.Drawing.Size(244, 30);
             this.passwordWdhBox.TabIndex = 13;
             // 
@@ -682,6 +683,7 @@
             // 
             this.passwordBox.Location = new System.Drawing.Point(167, 201);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.ReadOnly = true;
             this.passwordBox.Size = new System.Drawing.Size(244, 30);
             this.passwordBox.TabIndex = 11;
             // 
