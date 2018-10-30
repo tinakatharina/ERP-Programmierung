@@ -238,5 +238,10 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void initButton_Click(object sender, EventArgs e)
+        {
+            provider.checkExistence();
+        }
     }
 }

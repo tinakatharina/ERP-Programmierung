@@ -723,6 +723,7 @@
             this.initButton.TabIndex = 8;
             this.initButton.Text = "Init";
             this.initButton.UseVisualStyleBackColor = false;
+            this.initButton.Click += new System.EventHandler(this.initButton_Click);
             // 
             // deleteButton
             // 

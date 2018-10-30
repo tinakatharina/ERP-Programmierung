@@ -64,26 +64,49 @@ namespace WindowsFormsApp1
             BusPartnerEmployee.BusPartnerEmployeeGetPassword passwort = new BusPartnerEmployeeGetPassword();
             BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse response;
 
-            /*
-                        passwort.PartnerEmployeeId = "0000000142";
+            
+                     passwort.PartnerEmployeeId = "0000000129";
 
                         passwort.Statusinfo = new Bapiuswsta[10];
-                        BusPartnerEmployee.Bapiuswsta b = new Bapiuswsta();
+                        
 
-                        b.Validto = "31.12.2099";
 
-                        passwort.Statusinfo[1] = b;
-                          */
+
+
 
             response = client.BusPartnerEmployeeGetPassword(passwort);
 
                         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                        Console.WriteLine(response.Return.Message);
+                        Console.WriteLine(response.Statusinfo[0].Objid);
 
                         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
             return response;
           
+        }
+
+        public BusPartnerEmployeeCheckExistenceResponse checkExistence()
+        {
+            if (counter == 0)
+            {
+                client.ClientCredentials.UserName.UserName = "IDES-012";
+                client.ClientCredentials.UserName.Password = "erpprogrammierung";
+                client.Open();
+                counter++;
+            }
+
+            BusPartnerEmployee.BusPartnerEmployeeCheckExistence check = new BusPartnerEmployeeCheckExistence();
+            BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse response;
+
+            check.PartnerEmployeeId = "0000000127";
+
+            response = client.BusPartnerEmployeeCheckExistence(check);
+
+            Console.WriteLine(response.Customer);
+
+
+
+            return response;
         }
 
 
