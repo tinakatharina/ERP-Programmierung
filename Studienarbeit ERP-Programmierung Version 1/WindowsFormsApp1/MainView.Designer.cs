@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
             this.infoLabel = new System.Windows.Forms.Label();
@@ -900,7 +900,7 @@
             // 
             this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5});
+            listViewItem6});
             this.passwordListView.Location = new System.Drawing.Point(485, 62);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
@@ -1049,6 +1049,8 @@
             this.confirmPWButton.Size = new System.Drawing.Size(155, 35);
             this.confirmPWButton.TabIndex = 6;
             this.confirmPWButton.Text = "Bestätigen";
+            this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
+        "gen möchten (vorher muss der Erstellen  oder Ändern Button genutzt worden sein)");
             this.confirmPWButton.UseVisualStyleBackColor = false;
             // 
             // showPWButton
@@ -1120,8 +1122,8 @@
             this.button2.Size = new System.Drawing.Size(85, 32);
             this.button2.TabIndex = 49;
             this.button2.Text = "prüfen";
-            this.toolTip1.SetToolTip(this.button2, "Klicken Sie diesen Button wenn Sie sich die Übersicht, \r\nüber alle Einträge anzei" +
-        "gen lassen möchten.");
+            this.toolTip1.SetToolTip(this.button2, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
+        "orhanden ist, indem Sie dessen ID eingeben");
             this.button2.UseVisualStyleBackColor = false;
             // 
             // MainView
