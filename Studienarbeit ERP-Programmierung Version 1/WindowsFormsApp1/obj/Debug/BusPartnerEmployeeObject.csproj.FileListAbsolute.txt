@@ -20,3 +20,14 @@ C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-
 C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogIn.resources
 C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainView.resources
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csprojAssemblyReference.cache
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogIn.resources
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainView.resources
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.GenerateResource.cache
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CoreCompileInputs.cache
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\BusPartnerEmployeeGit\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
