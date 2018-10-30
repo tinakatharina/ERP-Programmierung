@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
             return response; 
         }
 
-       public BusPartnerEmployeeGetPasswordResponse getPasswort()
+       public BusPartnerEmployeeGetPasswordResponse getPasswort(string employeeId)
         {
              if (counter == 0)
             {
@@ -65,27 +65,23 @@ namespace WindowsFormsApp1
             BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse response;
 
             
-                     passwort.PartnerEmployeeId = "0000000129";
+                     passwort.PartnerEmployeeId = employeeId;
 
                         passwort.Statusinfo = new Bapiuswsta[10];
                         
-
-
-
-
-
+            
             response = client.BusPartnerEmployeeGetPassword(passwort);
 
-                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                        Console.WriteLine(response.Statusinfo[0].Objid);
+                      //  Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                       //Console.WriteLine(response.Statusinfo[0].Objid);
 
-                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
             return response;
           
         }
 
-        public BusPartnerEmployeeCheckExistenceResponse checkExistence()
+        public BusPartnerEmployeeCheckExistenceResponse checkExistence(string id)
         {
             if (counter == 0)
             {
@@ -98,7 +94,7 @@ namespace WindowsFormsApp1
             BusPartnerEmployee.BusPartnerEmployeeCheckExistence check = new BusPartnerEmployeeCheckExistence();
             BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse response;
 
-            check.PartnerEmployeeId = "0000000127";
+            check.PartnerEmployeeId = id;
 
             response = client.BusPartnerEmployeeCheckExistence(check);
 

@@ -150,26 +150,22 @@ namespace WindowsFormsApp1
         }
 
         private void showPWButton_Click(object sender, EventArgs e)
-        {
-            provider.getPasswort();
-
-
+        {    
             passwordListView.Items.Clear();
             BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
             foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
             {
-                String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
-                ListViewItem viewItem = new ListViewItem(employee);
-                employeeListView.Items.Add(viewItem);
+               BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse passwortRes = provider.getPasswort(data.Partneremployeeid);
+
+                if (passwortRes.Return.Message.Length == 0)
+                {           
+                    String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
+                    ListViewItem viewItem = new ListViewItem(employee);
+                    passwordListView.Items.Add(viewItem);
+                }
             }
-            employeeListView.Refresh();
-            employeeListView.FullRowSelect = true;
-
-
-
-
-
-
+            passwordListView.Refresh();
+            passwordListView.FullRowSelect = true;
         }
 
         private void logoutPWButton_Click(object sender, EventArgs e)
@@ -271,9 +267,29 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void boxFill2()
+        {
+            String selected = passwordListView.SelectedItems[0].Text;
+            Console.WriteLine("Selected " + selected);
+            BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse res = provider.getPasswort(selected);
+
+            TypTextBox.Text = res.Statusinfo[0].Objtype;
+            IDTextBox.Text = res.Statusinfo[0].Objid;
+            ServiceTextBox.Text = res.Statusinfo[0].Service.ToString();
+            StatusTextBox.Text = res.Statusinfo[0].State;
+            AnlegeTextbox.Text = res.Statusinfo[0].Uiddate;
+            GueltigTextbox.Text = res.Statusinfo[0].Validto;
+            LCNTTextBox.Text = res.Statusinfo[0].Lcnt.ToString();
+            LDateTextBox.Text = res.Statusinfo[0].Ldate;
+            LTimeTextbox.Text = res.Statusinfo[0].Ltime.ToString();
+            UpdpassTextbox.Text = res.Statusinfo[0].Updpass;       
+        
+    }
+
+
         private void initButton_Click(object sender, EventArgs e)
         {
-            provider.checkExistence();
+            
         }
 
         private void listLabel_Click(object sender, EventArgs e)
@@ -289,6 +305,47 @@ namespace WindowsFormsApp1
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String s = textBox11.Text;
+            int n;
+            bool isNumeric = int.TryParse(s, out n);
+
+
+            if (isNumeric == true)
+            {
+                BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse res = provider.checkExistence(s);
+                if (res.Customer.Length > 0)
+                {
+                    TimerStart();
+                    infoLabel.Text = "Der Eintrag ist vorhanden";
+                }
+                else
+                {
+                    TimerStart();
+                    infoLabel.Text = "Der Eintrag ist nicht vorhanden";
+                }
+            }
+            else
+            {
+                TimerStart();
+                infoLabel.Text = "Die EmployeeID muss aus Zahlen bestehen!";
+            } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (passwordListView.SelectedItems.Count > 0)
+            {
+                boxFill2();
+            }
+            else
+            {
+                TimerStart();
+                infoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+            }
         }
     }
 }

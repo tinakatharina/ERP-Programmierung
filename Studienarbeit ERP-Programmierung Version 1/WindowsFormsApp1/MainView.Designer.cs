@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
             this.infoLabel = new System.Windows.Forms.Label();
@@ -74,16 +74,16 @@
             this.listEmployeeLabel = new System.Windows.Forms.Label();
             this.Passwoerter = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LCNTTextBox = new System.Windows.Forms.TextBox();
+            this.LDateTextBox = new System.Windows.Forms.TextBox();
+            this.LTimeTextbox = new System.Windows.Forms.TextBox();
+            this.UpdpassTextbox = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.ServiceTextBox = new System.Windows.Forms.TextBox();
+            this.StatusTextBox = new System.Windows.Forms.TextBox();
+            this.AnlegeTextbox = new System.Windows.Forms.TextBox();
+            this.GueltigTextbox = new System.Windows.Forms.TextBox();
+            this.TypTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pruefenButton = new System.Windows.Forms.Button();
             this.Passwörter.SuspendLayout();
             this.Mitarbeiter.SuspendLayout();
             this.Passwoerter.SuspendLayout();
@@ -136,7 +136,7 @@
             // Mitarbeiter
             // 
             this.Mitarbeiter.BackColor = System.Drawing.Color.White;
-            this.Mitarbeiter.Controls.Add(this.button2);
+            this.Mitarbeiter.Controls.Add(this.pruefenButton);
             this.Mitarbeiter.Controls.Add(this.textBox11);
             this.Mitarbeiter.Controls.Add(this.label13);
             this.Mitarbeiter.Controls.Add(this.infoLabel);
@@ -617,16 +617,16 @@
             // 
             this.Passwoerter.Controls.Add(this.label15);
             this.Passwoerter.Controls.Add(this.label12);
-            this.Passwoerter.Controls.Add(this.textBox10);
-            this.Passwoerter.Controls.Add(this.textBox9);
-            this.Passwoerter.Controls.Add(this.textBox8);
-            this.Passwoerter.Controls.Add(this.textBox7);
-            this.Passwoerter.Controls.Add(this.textBox6);
-            this.Passwoerter.Controls.Add(this.textBox5);
-            this.Passwoerter.Controls.Add(this.textBox4);
-            this.Passwoerter.Controls.Add(this.textBox3);
-            this.Passwoerter.Controls.Add(this.textBox2);
-            this.Passwoerter.Controls.Add(this.textBox1);
+            this.Passwoerter.Controls.Add(this.LCNTTextBox);
+            this.Passwoerter.Controls.Add(this.LDateTextBox);
+            this.Passwoerter.Controls.Add(this.LTimeTextbox);
+            this.Passwoerter.Controls.Add(this.UpdpassTextbox);
+            this.Passwoerter.Controls.Add(this.IDTextBox);
+            this.Passwoerter.Controls.Add(this.ServiceTextBox);
+            this.Passwoerter.Controls.Add(this.StatusTextBox);
+            this.Passwoerter.Controls.Add(this.AnlegeTextbox);
+            this.Passwoerter.Controls.Add(this.GueltigTextbox);
+            this.Passwoerter.Controls.Add(this.TypTextBox);
             this.Passwoerter.Controls.Add(this.label11);
             this.Passwoerter.Controls.Add(this.label10);
             this.Passwoerter.Controls.Add(this.label9);
@@ -672,95 +672,95 @@
             this.label12.TabIndex = 41;
             this.label12.Text = "Passwort";
             // 
-            // textBox10
+            // LCNTTextBox
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(1056, 423);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(222, 30);
-            this.textBox10.TabIndex = 40;
+            this.LCNTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCNTTextBox.Location = new System.Drawing.Point(1056, 423);
+            this.LCNTTextBox.Name = "LCNTTextBox";
+            this.LCNTTextBox.ReadOnly = true;
+            this.LCNTTextBox.Size = new System.Drawing.Size(222, 30);
+            this.LCNTTextBox.TabIndex = 40;
             // 
-            // textBox9
+            // LDateTextBox
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(1056, 477);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(222, 30);
-            this.textBox9.TabIndex = 39;
+            this.LDateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDateTextBox.Location = new System.Drawing.Point(1056, 477);
+            this.LDateTextBox.Name = "LDateTextBox";
+            this.LDateTextBox.ReadOnly = true;
+            this.LDateTextBox.Size = new System.Drawing.Size(222, 30);
+            this.LDateTextBox.TabIndex = 39;
             // 
-            // textBox8
+            // LTimeTextbox
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(1056, 530);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(222, 30);
-            this.textBox8.TabIndex = 38;
+            this.LTimeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTimeTextbox.Location = new System.Drawing.Point(1056, 530);
+            this.LTimeTextbox.Name = "LTimeTextbox";
+            this.LTimeTextbox.ReadOnly = true;
+            this.LTimeTextbox.Size = new System.Drawing.Size(222, 30);
+            this.LTimeTextbox.TabIndex = 38;
             // 
-            // textBox7
+            // UpdpassTextbox
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(1056, 581);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(222, 30);
-            this.textBox7.TabIndex = 37;
+            this.UpdpassTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdpassTextbox.Location = new System.Drawing.Point(1056, 581);
+            this.UpdpassTextbox.Name = "UpdpassTextbox";
+            this.UpdpassTextbox.ReadOnly = true;
+            this.UpdpassTextbox.Size = new System.Drawing.Size(222, 30);
+            this.UpdpassTextbox.TabIndex = 37;
             // 
-            // textBox6
+            // IDTextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(1056, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(222, 30);
-            this.textBox6.TabIndex = 36;
+            this.IDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTextBox.Location = new System.Drawing.Point(1056, 161);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.ReadOnly = true;
+            this.IDTextBox.Size = new System.Drawing.Size(222, 30);
+            this.IDTextBox.TabIndex = 36;
             // 
-            // textBox5
+            // ServiceTextBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(1056, 216);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(222, 30);
-            this.textBox5.TabIndex = 35;
+            this.ServiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceTextBox.Location = new System.Drawing.Point(1056, 216);
+            this.ServiceTextBox.Name = "ServiceTextBox";
+            this.ServiceTextBox.ReadOnly = true;
+            this.ServiceTextBox.Size = new System.Drawing.Size(222, 30);
+            this.ServiceTextBox.TabIndex = 35;
             // 
-            // textBox4
+            // StatusTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(1056, 268);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(222, 30);
-            this.textBox4.TabIndex = 34;
+            this.StatusTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusTextBox.Location = new System.Drawing.Point(1056, 268);
+            this.StatusTextBox.Name = "StatusTextBox";
+            this.StatusTextBox.ReadOnly = true;
+            this.StatusTextBox.Size = new System.Drawing.Size(222, 30);
+            this.StatusTextBox.TabIndex = 34;
             // 
-            // textBox3
+            // AnlegeTextbox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(1056, 319);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(222, 30);
-            this.textBox3.TabIndex = 33;
+            this.AnlegeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnlegeTextbox.Location = new System.Drawing.Point(1056, 319);
+            this.AnlegeTextbox.Name = "AnlegeTextbox";
+            this.AnlegeTextbox.ReadOnly = true;
+            this.AnlegeTextbox.Size = new System.Drawing.Size(222, 30);
+            this.AnlegeTextbox.TabIndex = 33;
             // 
-            // textBox2
+            // GueltigTextbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1056, 370);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(222, 30);
-            this.textBox2.TabIndex = 32;
+            this.GueltigTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GueltigTextbox.Location = new System.Drawing.Point(1056, 370);
+            this.GueltigTextbox.Name = "GueltigTextbox";
+            this.GueltigTextbox.ReadOnly = true;
+            this.GueltigTextbox.Size = new System.Drawing.Size(222, 30);
+            this.GueltigTextbox.TabIndex = 32;
             // 
-            // textBox1
+            // TypTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1056, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(222, 30);
-            this.textBox1.TabIndex = 31;
+            this.TypTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TypTextBox.Location = new System.Drawing.Point(1056, 108);
+            this.TypTextBox.Name = "TypTextBox";
+            this.TypTextBox.ReadOnly = true;
+            this.TypTextBox.Size = new System.Drawing.Size(222, 30);
+            this.TypTextBox.TabIndex = 31;
             // 
             // label11
             // 
@@ -895,12 +895,13 @@
             this.toolTip2.SetToolTip(this.button1, "Hier können Sie sich die Passwortinformationen \r\nzu einen Passwort aus der Liste " +
         "anzeigen lassen.");
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // passwordListView
             // 
             this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem1});
             this.passwordListView.Location = new System.Drawing.Point(485, 62);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
@@ -1112,19 +1113,20 @@
             this.textBox11.TabIndex = 48;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // button2
+            // pruefenButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DeepPink;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1195, 550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 32);
-            this.button2.TabIndex = 49;
-            this.button2.Text = "prüfen";
-            this.toolTip1.SetToolTip(this.button2, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
+            this.pruefenButton.BackColor = System.Drawing.Color.DeepPink;
+            this.pruefenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pruefenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pruefenButton.Location = new System.Drawing.Point(1195, 550);
+            this.pruefenButton.Name = "pruefenButton";
+            this.pruefenButton.Size = new System.Drawing.Size(85, 32);
+            this.pruefenButton.TabIndex = 49;
+            this.pruefenButton.Text = "prüfen";
+            this.toolTip1.SetToolTip(this.pruefenButton, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
         "orhanden ist, indem Sie dessen ID eingeben");
-            this.button2.UseVisualStyleBackColor = false;
+            this.pruefenButton.UseVisualStyleBackColor = false;
+            this.pruefenButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainView
             // 
@@ -1208,16 +1210,16 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LCNTTextBox;
+        private System.Windows.Forms.TextBox LDateTextBox;
+        private System.Windows.Forms.TextBox LTimeTextbox;
+        private System.Windows.Forms.TextBox UpdpassTextbox;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.TextBox ServiceTextBox;
+        private System.Windows.Forms.TextBox StatusTextBox;
+        private System.Windows.Forms.TextBox AnlegeTextbox;
+        private System.Windows.Forms.TextBox GueltigTextbox;
+        private System.Windows.Forms.TextBox TypTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -1234,6 +1236,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button pruefenButton;
     }
 }
