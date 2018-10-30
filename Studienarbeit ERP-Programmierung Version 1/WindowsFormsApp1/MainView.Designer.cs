@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
             this.infoLabel = new System.Windows.Forms.Label();
@@ -608,7 +609,10 @@
             // 
             // passwordListView
             // 
-            this.passwordListView.Location = new System.Drawing.Point(523, 64);
+            this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.passwordListView.Location = new System.Drawing.Point(486, 56);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 370);
             this.passwordListView.TabIndex = 18;
@@ -619,7 +623,7 @@
             this.logoutPWButton.BackColor = System.Drawing.Color.DeepPink;
             this.logoutPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logoutPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutPWButton.Location = new System.Drawing.Point(521, 452);
+            this.logoutPWButton.Location = new System.Drawing.Point(485, 452);
             this.logoutPWButton.Name = "logoutPWButton";
             this.logoutPWButton.Size = new System.Drawing.Size(136, 35);
             this.logoutPWButton.TabIndex = 17;
@@ -632,7 +636,7 @@
             this.closePWButton.BackColor = System.Drawing.Color.DeepPink;
             this.closePWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.closePWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closePWButton.Location = new System.Drawing.Point(744, 452);
+            this.closePWButton.Location = new System.Drawing.Point(704, 452);
             this.closePWButton.Name = "closePWButton";
             this.closePWButton.Size = new System.Drawing.Size(136, 35);
             this.closePWButton.TabIndex = 16;
@@ -755,9 +759,9 @@
             this.showPWButton.BackColor = System.Drawing.Color.DeepPink;
             this.showPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.showPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPWButton.Location = new System.Drawing.Point(774, 15);
+            this.showPWButton.Location = new System.Drawing.Point(720, 12);
             this.showPWButton.Name = "showPWButton";
-            this.showPWButton.Size = new System.Drawing.Size(106, 35);
+            this.showPWButton.Size = new System.Drawing.Size(122, 35);
             this.showPWButton.TabIndex = 5;
             this.showPWButton.Text = "Anzeigen";
             this.showPWButton.UseVisualStyleBackColor = false;
@@ -767,11 +771,12 @@
             // 
             this.listLabel.AutoSize = true;
             this.listLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listLabel.Location = new System.Drawing.Point(516, 25);
+            this.listLabel.Location = new System.Drawing.Point(488, 20);
             this.listLabel.Name = "listLabel";
             this.listLabel.Size = new System.Drawing.Size(182, 25);
             this.listLabel.TabIndex = 3;
             this.listLabel.Text = "Liste der Mitarbeiter";
+            this.listLabel.Click += new System.EventHandler(this.listLabel_Click);
             // 
             // toolTip1
             // 

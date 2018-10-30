@@ -40,6 +40,20 @@ namespace WindowsFormsApp1
             employeeListView.Columns[1].Width = 70;
             employeeListView.Columns[2].Width = 90;
 
+
+            passwordListView.View = View.Details;
+
+            String[] columnKeys1 = { "employeeId", "firstName", "lastName" };
+            String[] columnTexts1 = { "ID", "Vorname", "Nachname" };
+
+            passwordListView.Columns.Add(columnKeys1[0], columnTexts1[0]);
+            passwordListView.Columns.Add(columnKeys1[1], columnTexts1[1]);
+            passwordListView.Columns.Add(columnKeys1[2], columnTexts1[2]);
+
+            passwordListView.Columns[0].Width = 100;
+            passwordListView.Columns[1].Width = 70;
+            passwordListView.Columns[2].Width = 90;
+
         }
 
 
@@ -138,6 +152,24 @@ namespace WindowsFormsApp1
         private void showPWButton_Click(object sender, EventArgs e)
         {
             provider.getPasswort();
+
+
+            passwordListView.Items.Clear();
+            BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
+            foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
+            {
+                String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
+                ListViewItem viewItem = new ListViewItem(employee);
+                employeeListView.Items.Add(viewItem);
+            }
+            employeeListView.Refresh();
+            employeeListView.FullRowSelect = true;
+
+
+
+
+
+
         }
 
         private void logoutPWButton_Click(object sender, EventArgs e)
@@ -242,6 +274,11 @@ namespace WindowsFormsApp1
         private void initButton_Click(object sender, EventArgs e)
         {
             provider.checkExistence();
+        }
+
+        private void listLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
