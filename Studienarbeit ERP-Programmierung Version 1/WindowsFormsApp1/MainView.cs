@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
 
         private void showPWButton_Click(object sender, EventArgs e)
         {
-
+            provider.getPasswort();
         }
 
         private void logoutPWButton_Click(object sender, EventArgs e)

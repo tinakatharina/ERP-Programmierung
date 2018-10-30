@@ -108,6 +108,7 @@
             this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bus Partner Employee";
             ((System.ComponentModel.ISupportInitialize)(this.loginPicture)).EndInit();
             this.ResumeLayout(false);

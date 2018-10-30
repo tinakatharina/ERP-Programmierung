@@ -15,17 +15,13 @@ namespace WindowsFormsApp1
         {
             dataProvider.Login();
             MainView mainView = new MainView();
-            Form activeForm = Form.ActiveForm;
-            activeForm.Hide();
-            mainView.Show();  
+            mainView.ShowDialog();
         }
 
         public void Logout()
         {
-         //   Form activeForm = Form.ActiveForm;
-         //   activeForm.Close();
-         // Müssten wir noch iwie machen 
-
+            Form activeForm = Form.ActiveForm;
+            activeForm.Close();
         }
 
         public void Close()
@@ -33,15 +29,6 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        public void GetList()
-        {
-            BusPartnerEmployee.BusPartnerEmployeeGetListResponse response = dataProvider.GetList();
-
-
-
-
-
-        }
 
 
     }

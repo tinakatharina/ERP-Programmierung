@@ -785,6 +785,7 @@
             this.Controls.Add(this.Passwörter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bus Partner Employee";
             this.Passwörter.ResumeLayout(false);
             this.Mitarbeiter.ResumeLayout(false);
