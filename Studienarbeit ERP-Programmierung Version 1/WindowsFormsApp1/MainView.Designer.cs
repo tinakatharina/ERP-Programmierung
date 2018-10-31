@@ -32,6 +32,9 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
+            this.pruefenButton = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
             this.streetBox = new System.Windows.Forms.TextBox();
             this.countryBox = new System.Windows.Forms.TextBox();
@@ -73,6 +76,8 @@
             this.getListButton = new System.Windows.Forms.Button();
             this.listEmployeeLabel = new System.Windows.Forms.Label();
             this.Passwoerter = new System.Windows.Forms.TabPage();
+            this.pwInfoLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.LCNTTextBox = new System.Windows.Forms.TextBox();
             this.LDateTextBox = new System.Windows.Forms.TextBox();
@@ -95,11 +100,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pwInfo_Button = new System.Windows.Forms.Button();
             this.passwordListView = new System.Windows.Forms.ListView();
             this.logoutPWButton = new System.Windows.Forms.Button();
             this.closePWButton = new System.Windows.Forms.Button();
-            this.hintLabel = new System.Windows.Forms.Label();
             this.pWLabel = new System.Windows.Forms.Label();
             this.passwordWdhBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -113,10 +117,6 @@
             this.listLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.pruefenButton = new System.Windows.Forms.Button();
             this.Passwörter.SuspendLayout();
             this.Mitarbeiter.SuspendLayout();
             this.Passwoerter.SuspendLayout();
@@ -186,6 +186,40 @@
             this.Mitarbeiter.Size = new System.Drawing.Size(1317, 676);
             this.Mitarbeiter.TabIndex = 0;
             this.Mitarbeiter.Text = "Mitarbeiter";
+            // 
+            // pruefenButton
+            // 
+            this.pruefenButton.BackColor = System.Drawing.Color.DeepPink;
+            this.pruefenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pruefenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pruefenButton.Location = new System.Drawing.Point(1195, 550);
+            this.pruefenButton.Name = "pruefenButton";
+            this.pruefenButton.Size = new System.Drawing.Size(85, 32);
+            this.pruefenButton.TabIndex = 49;
+            this.pruefenButton.Text = "prüfen";
+            this.toolTip1.SetToolTip(this.pruefenButton, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
+        "orhanden ist, indem Sie dessen ID eingeben");
+            this.pruefenButton.UseVisualStyleBackColor = false;
+            this.pruefenButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(909, 550);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(270, 27);
+            this.textBox11.TabIndex = 48;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(905, 509);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(348, 24);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Verfügbarkeit einer Mitarbeiter-ID prüfen:\r\n";
             // 
             // infoLabel
             // 
@@ -615,6 +649,7 @@
             // 
             // Passwoerter
             // 
+            this.Passwoerter.Controls.Add(this.pwInfoLabel);
             this.Passwoerter.Controls.Add(this.label15);
             this.Passwoerter.Controls.Add(this.label12);
             this.Passwoerter.Controls.Add(this.LCNTTextBox);
@@ -638,11 +673,10 @@
             this.Passwoerter.Controls.Add(this.label3);
             this.Passwoerter.Controls.Add(this.label2);
             this.Passwoerter.Controls.Add(this.label1);
-            this.Passwoerter.Controls.Add(this.button1);
+            this.Passwoerter.Controls.Add(this.pwInfo_Button);
             this.Passwoerter.Controls.Add(this.passwordListView);
             this.Passwoerter.Controls.Add(this.logoutPWButton);
             this.Passwoerter.Controls.Add(this.closePWButton);
-            this.Passwoerter.Controls.Add(this.hintLabel);
             this.Passwoerter.Controls.Add(this.pWLabel);
             this.Passwoerter.Controls.Add(this.passwordWdhBox);
             this.Passwoerter.Controls.Add(this.passwordLabel);
@@ -661,6 +695,26 @@
             this.Passwoerter.TabIndex = 1;
             this.Passwoerter.Text = "Passwörter";
             this.Passwoerter.UseVisualStyleBackColor = true;
+            // 
+            // pwInfoLabel
+            // 
+            this.pwInfoLabel.AutoSize = true;
+            this.pwInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.pwInfoLabel.Location = new System.Drawing.Point(29, 477);
+            this.pwInfoLabel.Name = "pwInfoLabel";
+            this.pwInfoLabel.Size = new System.Drawing.Size(0, 20);
+            this.pwInfoLabel.TabIndex = 46;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(29, 156);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(159, 25);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Neues Passwort ";
             // 
             // label12
             // 
@@ -882,20 +936,20 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Password Informationen";
             // 
-            // button1
+            // pwInfo_Button
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepPink;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1156, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 35);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Anzeigen";
-            this.toolTip2.SetToolTip(this.button1, "Hier können Sie sich die Passwortinformationen \r\nzu einen Passwort aus der Liste " +
+            this.pwInfo_Button.BackColor = System.Drawing.Color.DeepPink;
+            this.pwInfo_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pwInfo_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwInfo_Button.Location = new System.Drawing.Point(1142, 12);
+            this.pwInfo_Button.Name = "pwInfo_Button";
+            this.pwInfo_Button.Size = new System.Drawing.Size(136, 35);
+            this.pwInfo_Button.TabIndex = 19;
+            this.pwInfo_Button.Text = "Anzeigen";
+            this.toolTip2.SetToolTip(this.pwInfo_Button, "Hier können Sie sich die Passwortinformationen \r\nzu einen Passwort aus der Liste " +
         "anzeigen lassen.");
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pwInfo_Button.UseVisualStyleBackColor = false;
+            this.pwInfo_Button.Click += new System.EventHandler(this.pwInfoButton_Click);
             // 
             // passwordListView
             // 
@@ -933,17 +987,6 @@
             this.closePWButton.Text = "Beenden";
             this.closePWButton.UseVisualStyleBackColor = false;
             this.closePWButton.Click += new System.EventHandler(this.closePWButton_Click);
-            // 
-            // hintLabel
-            // 
-            this.hintLabel.AutoSize = true;
-            this.hintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hintLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.hintLabel.Location = new System.Drawing.Point(31, 489);
-            this.hintLabel.Name = "hintLabel";
-            this.hintLabel.Size = new System.Drawing.Size(60, 18);
-            this.hintLabel.TabIndex = 15;
-            this.hintLabel.Text = "Hinweis";
             // 
             // pWLabel
             // 
@@ -1059,9 +1102,9 @@
             this.showPWButton.BackColor = System.Drawing.Color.DeepPink;
             this.showPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.showPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPWButton.Location = new System.Drawing.Point(720, 12);
+            this.showPWButton.Location = new System.Drawing.Point(694, 12);
             this.showPWButton.Name = "showPWButton";
-            this.showPWButton.Size = new System.Drawing.Size(122, 35);
+            this.showPWButton.Size = new System.Drawing.Size(148, 35);
             this.showPWButton.TabIndex = 5;
             this.showPWButton.Text = "Anzeigen";
             this.toolTip2.SetToolTip(this.showPWButton, "Hier können Sie sich die Liste der Mitarbeiter anzeigen lassen,\r\nwelche bereits e" +
@@ -1083,50 +1126,6 @@
             // toolTip1
             // 
             this.toolTip1.Tag = "hi";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(29, 156);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(159, 25);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Neues Passwort ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(905, 509);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(372, 24);
-            this.label13.TabIndex = 47;
-            this.label13.Text = "Verfügbarkeit von PartnerEmployee prüfen:\r\n";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(909, 550);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(270, 27);
-            this.textBox11.TabIndex = 48;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // pruefenButton
-            // 
-            this.pruefenButton.BackColor = System.Drawing.Color.DeepPink;
-            this.pruefenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pruefenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pruefenButton.Location = new System.Drawing.Point(1195, 550);
-            this.pruefenButton.Name = "pruefenButton";
-            this.pruefenButton.Size = new System.Drawing.Size(85, 32);
-            this.pruefenButton.TabIndex = 49;
-            this.pruefenButton.Text = "prüfen";
-            this.toolTip1.SetToolTip(this.pruefenButton, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
-        "orhanden ist, indem Sie dessen ID eingeben");
-            this.pruefenButton.UseVisualStyleBackColor = false;
-            this.pruefenButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainView
             // 
@@ -1178,7 +1177,6 @@
         private System.Windows.Forms.Label listLabel;
         private System.Windows.Forms.Label pWLabel;
         private System.Windows.Forms.TextBox passwordWdhBox;
-        private System.Windows.Forms.Label hintLabel;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button closePWButton;
         private System.Windows.Forms.Button logoutButton;
@@ -1231,11 +1229,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button pwInfo_Button;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button pruefenButton;
+        private System.Windows.Forms.Label pwInfoLabel;
     }
 }

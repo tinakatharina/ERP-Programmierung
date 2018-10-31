@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
 
         public void TimerStart()
         {
-            timer.Interval = 10000;
+            timer.Interval = 5000;
             timer.Tick += new EventHandler(hideLabel);
             timer.Start();
         }
@@ -68,11 +68,13 @@ namespace WindowsFormsApp1
         {
             timer.Stop();
             infoLabel.Text = "";
+            pwInfoLabel.Text = "";
         }
 
         void hideLabel(object sender, EventArgs e)
         {
             infoLabel.Text = "";
+            pwInfoLabel.Text = "";
         }
 
         private void detailsButton_Click(object sender, EventArgs e)
@@ -150,7 +152,10 @@ namespace WindowsFormsApp1
         }
 
         private void showPWButton_Click(object sender, EventArgs e)
-        {    
+        {
+            TimerStop();
+            pwInfoLabel.Text = "Die Liste wird vorbereitet,\n dies dauert einen Moment...";
+            TimerStart();
             passwordListView.Items.Clear();
             BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
             foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
@@ -309,6 +314,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            TimerStop();
             String s = textBox11.Text;
             int n;
             bool isNumeric = int.TryParse(s, out n);
@@ -320,23 +326,24 @@ namespace WindowsFormsApp1
                 if (res.Customer.Length > 0)
                 {
                     TimerStart();
-                    infoLabel.Text = "Der Eintrag ist vorhanden";
+                    infoLabel.Text = "Diese ID existiert";
                 }
                 else
                 {
                     TimerStart();
-                    infoLabel.Text = "Der Eintrag ist nicht vorhanden";
+                    infoLabel.Text = "Diese ID existiert nicht";
                 }
             }
             else
             {
                 TimerStart();
-                infoLabel.Text = "Die EmployeeID muss aus Zahlen bestehen!";
+                infoLabel.Text = "Bitte geben Sie eine gültige ID ein";
             } 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pwInfoButton_Click(object sender, EventArgs e)
         {
+            TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
                 boxFill2();
@@ -344,8 +351,9 @@ namespace WindowsFormsApp1
             else
             {
                 TimerStart();
-                infoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+                pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
             }
         }
+
     }
 }
