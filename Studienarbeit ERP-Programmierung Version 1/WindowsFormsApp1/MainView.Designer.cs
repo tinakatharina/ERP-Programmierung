@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
             this.pruefenButton = new System.Windows.Forms.Button();
@@ -117,6 +117,8 @@
             this.listLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Passwörter.SuspendLayout();
             this.Mitarbeiter.SuspendLayout();
             this.Passwoerter.SuspendLayout();
@@ -649,6 +651,8 @@
             // 
             // Passwoerter
             // 
+            this.Passwoerter.Controls.Add(this.textBox1);
+            this.Passwoerter.Controls.Add(this.label14);
             this.Passwoerter.Controls.Add(this.pwInfoLabel);
             this.Passwoerter.Controls.Add(this.label15);
             this.Passwoerter.Controls.Add(this.label12);
@@ -955,7 +959,7 @@
             // 
             this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.passwordListView.Location = new System.Drawing.Point(485, 62);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
@@ -992,7 +996,7 @@
             // 
             this.pWLabel.AutoSize = true;
             this.pWLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pWLabel.Location = new System.Drawing.Point(30, 370);
+            this.pWLabel.Location = new System.Drawing.Point(30, 397);
             this.pWLabel.Name = "pWLabel";
             this.pWLabel.Size = new System.Drawing.Size(115, 48);
             this.pWLabel.TabIndex = 14;
@@ -1000,7 +1004,7 @@
             // 
             // passwordWdhBox
             // 
-            this.passwordWdhBox.Location = new System.Drawing.Point(167, 375);
+            this.passwordWdhBox.Location = new System.Drawing.Point(167, 397);
             this.passwordWdhBox.Name = "passwordWdhBox";
             this.passwordWdhBox.ReadOnly = true;
             this.passwordWdhBox.Size = new System.Drawing.Size(282, 30);
@@ -1010,7 +1014,7 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(29, 319);
+            this.passwordLabel.Location = new System.Drawing.Point(29, 337);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(92, 25);
             this.passwordLabel.TabIndex = 12;
@@ -1018,7 +1022,7 @@
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(167, 319);
+            this.passwordBox.Location = new System.Drawing.Point(167, 337);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.ReadOnly = true;
             this.passwordBox.Size = new System.Drawing.Size(282, 30);
@@ -1127,6 +1131,24 @@
             // toolTip1
             // 
             this.toolTip1.Tag = "hi";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(29, 273);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 25);
+            this.label14.TabIndex = 47;
+            this.label14.Text = "ID";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(167, 273);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(282, 30);
+            this.textBox1.TabIndex = 48;
             // 
             // MainView
             // 
@@ -1237,5 +1259,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button pruefenButton;
         private System.Windows.Forms.Label pwInfoLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label14;
     }
 }

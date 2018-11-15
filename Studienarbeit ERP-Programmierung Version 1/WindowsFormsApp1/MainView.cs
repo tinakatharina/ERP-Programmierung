@@ -110,6 +110,10 @@ namespace WindowsFormsApp1
         {
             boxEditable();
             boxClear();
+
+            provider.createUser("1", "100");
+
+
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
@@ -143,12 +147,12 @@ namespace WindowsFormsApp1
 
         private void createButtonPW_Click(object sender, EventArgs e)
         {
-
+            provider.createPassword("3");
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            provider.deletePassword("3");
         }
 
         private void showPWButton_Click(object sender, EventArgs e)
@@ -294,7 +298,7 @@ namespace WindowsFormsApp1
 
         private void initButton_Click(object sender, EventArgs e)
         {
-            
+            provider.generatePassword("3");
         }
 
         private void listLabel_Click(object sender, EventArgs e)
@@ -357,7 +361,7 @@ namespace WindowsFormsApp1
 
         private void changePWButton_Click(object sender, EventArgs e)
         {
-            provider.changePassword("98507A9D729189C38DCDD2BAE981EFB1", "98507A9D729189C38DCDD2BAE981EFB1", "0000000027", "98507A9D729189C38DCDD2BAE981EFB8");
+            provider.changePassword("0000000000", "0000000000", "128", "98C09BAA08D77D28E674950EA6E1E477");
 
         }
     }
