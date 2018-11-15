@@ -355,5 +355,10 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void changePWButton_Click(object sender, EventArgs e)
+        {
+            provider.changePassword("98507A9D729189C38DCDD2BAE981EFB1", "98507A9D729189C38DCDD2BAE981EFB1", "0000000027", "98507A9D729189C38DCDD2BAE981EFB8");
+
+        }
     }
 }

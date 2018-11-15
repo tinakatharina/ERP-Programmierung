@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Mitarbeiter = new System.Windows.Forms.TabPage();
             this.pruefenButton = new System.Windows.Forms.Button();
@@ -930,7 +930,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(903, 17);
+            this.label1.Location = new System.Drawing.Point(893, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 20;
@@ -955,7 +955,7 @@
             // 
             this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.passwordListView.Location = new System.Drawing.Point(485, 62);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
@@ -1037,6 +1037,7 @@
             this.toolTip2.SetToolTip(this.changePWButton, "Wenn Sie diesen Button drücken können Sie ein altes Password ändern.\r\nVorher müss" +
         "en sie aber ein Password aus der Liste auswählen");
             this.changePWButton.UseVisualStyleBackColor = false;
+            this.changePWButton.Click += new System.EventHandler(this.changePWButton_Click);
             // 
             // createButtonPW
             // 

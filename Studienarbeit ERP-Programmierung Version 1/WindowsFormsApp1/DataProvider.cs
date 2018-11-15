@@ -105,6 +105,31 @@ namespace WindowsFormsApp1
             return response;
         }
 
+        public void changePassword(String newPW, String verify, String employeeID, String oldPW)
+        {
+            if (counter == 0)
+            {
+                client.ClientCredentials.UserName.UserName = "IDES-012";
+                client.ClientCredentials.UserName.Password = "erpprogrammierung";
+                client.Open();
+                counter++;
+            }
+
+
+            BusPartnerEmployee.BusPartnerEmployeeChangePassword change = new BusPartnerEmployeeChangePassword();
+            BusPartnerEmployeeChangePasswordResponse response;
+
+            change.NewPassword = newPW;
+            change.PartnerEmployeeId = employeeID;
+            change.Password = oldPW;
+            change.VerifyPassword = verify;
+
+            response = client.BusPartnerEmployeeChangePassword(change);
+
+            Console.WriteLine("************" + response.Return.Message + "********" + response.Return.Type + "*******");
+        }
+   
+
 
     }
     }
