@@ -147,34 +147,38 @@ namespace WindowsFormsApp1
 
         private void createButtonPW_Click(object sender, EventArgs e)
         {
-            provider.createPassword("3");
+            TimerStop();
+            pwIDBox.ReadOnly = false;
+            confirmPWButton.Enabled = true;
+            pwInfoLabel.Text = "Geben Sie nun eine ID ein \nund bestätigen Sie Ihre Eingabe durch den \n'Bestätigen'-Button!";
+            TimerStart();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            provider.deletePassword("3");
+            TimerStop();
+            if (passwordListView.SelectedItems.Count > 0)
+            {
+                String selected = passwordListView.SelectedItems[0].Text;
+                provider.deletePassword(selected);
+                prepareList();
+                boxClear2();
+                TimerStart();
+                pwInfoLabel.Text = "Der Eintrag wurde erfolgreich gelöscht!";
+            }
+            else
+            {
+                TimerStart();
+                pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus,\nder gelöscht werden soll!";
+            }
         }
 
         private void showPWButton_Click(object sender, EventArgs e)
         {
             TimerStop();
-            pwInfoLabel.Text = "Die Liste wird vorbereitet,\n dies dauert einen Moment...";
+            pwInfoLabel.Text = "Die Liste wird vorbereitet,\ndies dauert einen Moment...";
             TimerStart();
-            passwordListView.Items.Clear();
-            BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
-            foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
-            {
-               BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse passwortRes = provider.getPasswort(data.Partneremployeeid);
-
-                if (passwortRes.Return.Message.Length == 0)
-                {           
-                    String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
-                    ListViewItem viewItem = new ListViewItem(employee);
-                    passwordListView.Items.Add(viewItem);
-                }
-            }
-            passwordListView.Refresh();
-            passwordListView.FullRowSelect = true;
+            prepareList();
         }
 
         private void logoutPWButton_Click(object sender, EventArgs e)
@@ -279,7 +283,6 @@ namespace WindowsFormsApp1
         private void boxFill2()
         {
             String selected = passwordListView.SelectedItems[0].Text;
-            Console.WriteLine("Selected " + selected);
             BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse res = provider.getPasswort(selected);
 
             TypTextBox.Text = res.Statusinfo[0].Objtype;
@@ -292,13 +295,39 @@ namespace WindowsFormsApp1
             LDateTextBox.Text = res.Statusinfo[0].Ldate;
             LTimeTextbox.Text = res.Statusinfo[0].Ltime.ToString();
             UpdpassTextbox.Text = res.Statusinfo[0].Updpass;       
-        
-    }
+
+        }
+
+        private void boxClear2()
+        {
+            TypTextBox.Text = "";
+            IDTextBox.Text = "";
+            ServiceTextBox.Text = "";
+            StatusTextBox.Text = "";
+            AnlegeTextbox.Text = "";
+            GueltigTextbox.Text = "";
+            LCNTTextBox.Text = "";
+            LDateTextBox.Text = "";
+            LTimeTextbox.Text = "";
+            UpdpassTextbox.Text = "";
+        }
 
 
         private void initButton_Click(object sender, EventArgs e)
         {
-            provider.generatePassword("3");
+            TimerStop();
+            if (passwordListView.SelectedItems.Count > 0)
+            {
+                String selected = passwordListView.SelectedItems[0].Text;
+                provider.generatePassword(selected);
+                TimerStart();
+                pwInfoLabel.Text = "Für den Nutzer wurde erfolgreich \nein neues Passwort generiert!";
+            }
+            else
+            {
+                TimerStart();
+                pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Nutzer aus,\ndessen Passwort generiert werden soll!";
+            }
         }
 
         private void listLabel_Click(object sender, EventArgs e)
@@ -330,18 +359,18 @@ namespace WindowsFormsApp1
                 if (res.Customer.Length > 0)
                 {
                     TimerStart();
-                    infoLabel.Text = "Diese ID existiert";
+                    infoLabel.Text = "Diese ID existiert!";
                 }
                 else
                 {
                     TimerStart();
-                    infoLabel.Text = "Diese ID existiert nicht";
+                    infoLabel.Text = "Diese ID existiert nicht!";
                 }
             }
             else
             {
                 TimerStart();
-                infoLabel.Text = "Bitte geben Sie eine gültige ID ein";
+                infoLabel.Text = "Bitte geben Sie eine gültige ID ein!";
             } 
         }
 
@@ -361,8 +390,119 @@ namespace WindowsFormsApp1
 
         private void changePWButton_Click(object sender, EventArgs e)
         {
-            provider.changePassword("0000000000", "0000000000", "128", "98C09BAA08D77D28E674950EA6E1E477");
+            TimerStop();
+            if (passwordListView.SelectedItems.Count > 0)
+            {
+                passwordBox.ReadOnly = false;
+                passwordWdhBox.ReadOnly = false;
+                altPWBox.ReadOnly = false;
+                confirmPWButton.Enabled = true;
+                TimerStart();
+                pwInfoLabel.Text = "Bitte geben Sie Ihr altes und neues \nPasswort ein und bestätigen Sie \nIhre Eingabe!";
+            } else
+            {
+                TimerStart();
+                pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+            }
 
+        }
+
+        private void prepareList()
+        {
+            passwordListView.Items.Clear();
+            BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
+            foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
+            {
+                BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse passwortRes = provider.getPasswort(data.Partneremployeeid);
+
+                if (passwortRes.Return.Message.Length == 0)
+                {
+                    String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
+                    ListViewItem viewItem = new ListViewItem(employee);
+                    passwordListView.Items.Add(viewItem);
+                }
+            }
+            passwordListView.Refresh();
+            passwordListView.FullRowSelect = true;
+        }
+
+        private void confirmPWButton_Click(object sender, EventArgs e)
+        {
+            TimerStop();
+            string s = pwIDBox.Text;
+            int n;
+            if(passwordBox.ReadOnly)
+            {
+                if(s != "" && int.TryParse(s, out n))
+                {
+                    BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse res = provider.checkExistence(s);
+                    if(passwordListView.Items.Count == 1)
+                    {
+                        prepareList();
+                    }
+                    if(res.Customer.Length > 0 && passwordListView.FindItemWithText(s.PadLeft(10, '0')) == null)
+                    {
+                        provider.createPassword(s);
+                        prepareList();
+                        confirmPWButton.Enabled = false;
+                        pwIDBox.Text = "";
+                        pwIDBox.ReadOnly = true;
+                        pwInfoLabel.Text = "Der User wurder erfolgreich in der \nPasswort-Datenbank angelegt!";
+                        TimerStart();
+                    }
+                    else
+                    {
+                        pwInfoLabel.Text = "Diese ID existiert entweder schon in der \nDatenbank oder sie ist ungültig!";
+                        TimerStart();
+                    }
+                } else
+                {
+                    pwInfoLabel.Text = "Bitte geben Sie eine gültige ID ein!";
+                    TimerStart();
+                }
+            } else
+            {
+                string old = altPWBox.Text;
+                string newp = passwordBox.Text;
+                string wdh = passwordWdhBox.Text;
+                String selected = passwordListView.SelectedItems[0].Text;
+                if (newp != "" && wdh != "")
+                {
+                    if (int.TryParse(newp, out n))
+                    {
+                        if(newp.Equals(wdh))
+                        {
+                            if (provider.changePassword(newp, wdh, selected, old))
+                            {
+                                confirmPWButton.Enabled = false;
+                                altPWBox.ReadOnly = true;
+                                passwordBox.ReadOnly = true;
+                                passwordWdhBox.ReadOnly = true;
+                                altPWBox.Text = "";
+                                passwordBox.Text = "";
+                                passwordWdhBox.Text = "";
+                                pwInfoLabel.Text = "Das Passwort wurde erfolgreich geändert!";
+                                TimerStart();
+                            } else {
+                                pwInfoLabel.Text = "Das alte Passwort ist nicht korrekt oder \ndie ersten drei Zahlen des \nneuen Passwortes sind nicht unterschiedlich!";
+                                TimerStart();
+                            }
+                        } else
+                        {
+                            pwInfoLabel.Text = "Das neue Passwort und \ndas wiederholte stimmen nicht überein!";
+                            TimerStart();
+                        }
+                    } else
+                    {
+                        pwInfoLabel.Text = "Das Passwort darf nur Zahlen enthalten!";
+                        TimerStart();
+                    }
+                } else
+                {
+                    pwInfoLabel.Text = "Bitte geben Sie ein neues Passwort ein!";
+                    TimerStart();
+                }
+            }
         }
     }
 }

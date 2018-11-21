@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Connector.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Connected Services\BusPartnerEmployee\Reference.cs">

@@ -9,11 +9,9 @@ namespace WindowsFormsApp1
 {
     class BusPartnerEmployeeController
     {
-        private BusPartnerEmployeeDataProvider dataProvider = new BusPartnerEmployeeDataProvider();
 
         public void Login()
         {
-            dataProvider.Login();
             MainView mainView = new MainView();
             mainView.ShowDialog();
         }

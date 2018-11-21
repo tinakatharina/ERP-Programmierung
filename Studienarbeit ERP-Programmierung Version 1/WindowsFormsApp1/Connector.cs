@@ -8,7 +8,7 @@ using SAP.Middleware.Connector;
 
 namespace WindowsFormsApp1
 {
-    class Class1
+    class Connector
     {
 
         private RfcRepository repo;

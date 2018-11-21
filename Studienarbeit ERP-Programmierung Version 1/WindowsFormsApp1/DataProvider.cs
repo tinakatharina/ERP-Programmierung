@@ -14,6 +14,19 @@ namespace WindowsFormsApp1
 
         private RfcRepository repo;
         private RfcDestination destination;
+        private Z_HH_BusPartnerEmployee_01Client client = new Z_HH_BusPartnerEmployee_01Client();
+
+        public BusPartnerEmployeeDataProvider()
+        {
+            Login();
+        }
+
+        public void Login()
+        {
+            client.ClientCredentials.UserName.UserName = "IDES-012";
+            client.ClientCredentials.UserName.Password = "erpprogrammierung";
+            client.Open();
+        }
 
         private void makeConnection()
         {
@@ -26,8 +39,8 @@ namespace WindowsFormsApp1
                 { RfcConfigParameters.PoolSize, "10" },
                 { RfcConfigParameters.CharacterFaultIndicatorToken, "0x0023" },
                 { RfcConfigParameters.SystemID, "I48" },
-                { RfcConfigParameters.User, "IDES-016" },
-                { RfcConfigParameters.Password, "geheim01" },
+                { RfcConfigParameters.User, "IDES-012" },
+                { RfcConfigParameters.Password, "erpprogrammierung" },
                 { RfcConfigParameters.Client, "902" },
                 { RfcConfigParameters.Language, "D" },
                 { RfcConfigParameters.Name, "I48" }
@@ -36,20 +49,13 @@ namespace WindowsFormsApp1
             repo = destination.Repository;
         }
 
-        public void changePassword(String newPW, String verify, String employeeID, String oldPW)
+        public bool changePassword(String newPW, String verify, String employeeID, String oldPW)
         {
+            bool worked = true;
 
             makeConnection();
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
 
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_CHANGEPASSWO");
-            Console.WriteLine("Metadaten+++++: "+ func.Metadata);
                 func.SetValue("NEW_PASSWORD", newPW);
                 func.SetValue("VERIFY_PASSWORD",verify);
                 func.SetValue("PARTNEREMPLOYEEID", employeeID);
@@ -57,99 +63,47 @@ namespace WindowsFormsApp1
 
             func.Invoke(destination);
            
-
-            Console.WriteLine(func.ToString());
-
-            /*BusPartnerEmployee.BusPartnerEmployeeChangePassword change = new BusPartnerEmployeeChangePassword();
-        BusPartnerEmployeeChangePasswordResponse response;
-
-        change.NewPassword = newPW;
-        change.PartnerEmployeeId = employeeID;
-        change.Password = oldPW;
-        change.VerifyPassword = verify;
-
-        response = client.BusPartnerEmployeeChangePassword(change);
-
-        Console.WriteLine("************" + response.Return.Message + "********" + response.Return.Type + "*******");
-        */
-
-        }
-
-
-        public void generatePassword(string employeeId)
-        {
-            makeConnection();
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
+            if (func.ToString().Contains("nicht korrekt") || func.ToString().Contains("ersten drei")) {
+                worked = false;
             }
 
-            var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_CREATE_PW_RE");
-            Console.WriteLine("Metadaten+++++: " + func.Metadata);
-            func.SetValue("PARTNEREMPLOYEEID", employeeId);
-         
-            func.Invoke(destination);
-
-            Console.WriteLine(func.ToString());
-
+            return worked;
         }
+
 
         public void createPassword(string employeeId)
         {
             makeConnection();
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
+
+            var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_CREATE_PW_RE");
+            func.SetValue("PARTNEREMPLOYEEID", employeeId);
+         
+            func.Invoke(destination);
+        }
+
+        public void generatePassword(string employeeId)
+        {
+            makeConnection();
 
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_INITPASSWORD");
-            Console.WriteLine("Metadaten+++++: " + func.Metadata);
             func.SetValue("PARTNEREMPLOYEEID", employeeId);
 
             func.Invoke(destination);
-
-            Console.WriteLine(func.ToString());
-
-
         }
 
         public void deletePassword(string employeeId)
         {
             makeConnection();
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
 
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_DELETE_PW_RE");
-            Console.WriteLine("Metadaten+++++: " + func.Metadata);
             func.SetValue("PARTNEREMPLOYEEID", employeeId);
 
             func.Invoke(destination);
-
-            Console.WriteLine(func.ToString());
-
         }
 
         public void createUser(string customer, String vendor)
         {
             makeConnection();
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
 
             var func = repo.CreateFunction("BAPI_PARTNEREMPLOYEE_CREATE");
             Console.WriteLine("Metadaten+++++: " + func.Metadata);
@@ -166,25 +120,8 @@ namespace WindowsFormsApp1
 
         }
 
-        private Z_HH_BusPartnerEmployee_01Client client = new Z_HH_BusPartnerEmployee_01Client();
-        int counter = 0;
-
-        public void Login()
-        {
-            client.ClientCredentials.UserName.UserName = "IDES-012";
-            client.ClientCredentials.UserName.Password = "erpprogrammierung";
-            client.Open();
-        }
-
         public BusPartnerEmployeeGetListResponse GetList (int maxRows = 0, BusPartnerEmployee.BapicontactIdrange[] idRange = null)
         {
-            if (counter == 0){
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
-            
             //BapicontactAddressdata adressDaten;
             BusPartnerEmployee.BusPartnerEmployeeGetList busPartnerList = new BusPartnerEmployeeGetList();
 
@@ -210,44 +147,19 @@ namespace WindowsFormsApp1
 
        public BusPartnerEmployeeGetPasswordResponse getPasswort(string employeeId)
         {
-             if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
-
             BusPartnerEmployee.BusPartnerEmployeeGetPassword passwort = new BusPartnerEmployeeGetPassword();
             BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse response;
 
-            
-                     passwort.PartnerEmployeeId = employeeId;
-
-                        passwort.Statusinfo = new Bapiuswsta[10];
+            passwort.PartnerEmployeeId = employeeId;
+            passwort.Statusinfo = new Bapiuswsta[10];
                         
-            
             response = client.BusPartnerEmployeeGetPassword(passwort);
 
-                      //  Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                       //Console.WriteLine(response.Statusinfo[0].Objid);
-
-                        // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
             return response;
-          
         }
 
         public BusPartnerEmployeeCheckExistenceResponse checkExistence(string id)
         {
-            if (counter == 0)
-            {
-                client.ClientCredentials.UserName.UserName = "IDES-012";
-                client.ClientCredentials.UserName.Password = "erpprogrammierung";
-                client.Open();
-                counter++;
-            }
-
             BusPartnerEmployee.BusPartnerEmployeeCheckExistence check = new BusPartnerEmployeeCheckExistence();
             BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse response;
 
@@ -255,16 +167,12 @@ namespace WindowsFormsApp1
 
             response = client.BusPartnerEmployeeCheckExistence(check);
 
-            Console.WriteLine(response.Customer);
-
-
-
             return response;
         }
 
-        
-   
+
+
 
 
     }
-    }
+}

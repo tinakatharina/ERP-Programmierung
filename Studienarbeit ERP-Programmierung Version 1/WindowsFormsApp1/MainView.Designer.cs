@@ -76,6 +76,10 @@
             this.getListButton = new System.Windows.Forms.Button();
             this.listEmployeeLabel = new System.Windows.Forms.Label();
             this.Passwoerter = new System.Windows.Forms.TabPage();
+            this.altPwLabel = new System.Windows.Forms.Label();
+            this.altPWBox = new System.Windows.Forms.TextBox();
+            this.pwIDBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.pwInfoLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -117,8 +121,6 @@
             this.listLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Passwörter.SuspendLayout();
             this.Mitarbeiter.SuspendLayout();
             this.Passwoerter.SuspendLayout();
@@ -651,7 +653,9 @@
             // 
             // Passwoerter
             // 
-            this.Passwoerter.Controls.Add(this.textBox1);
+            this.Passwoerter.Controls.Add(this.altPwLabel);
+            this.Passwoerter.Controls.Add(this.altPWBox);
+            this.Passwoerter.Controls.Add(this.pwIDBox);
             this.Passwoerter.Controls.Add(this.label14);
             this.Passwoerter.Controls.Add(this.pwInfoLabel);
             this.Passwoerter.Controls.Add(this.label15);
@@ -700,12 +704,48 @@
             this.Passwoerter.Text = "Passwörter";
             this.Passwoerter.UseVisualStyleBackColor = true;
             // 
+            // altPwLabel
+            // 
+            this.altPwLabel.AutoSize = true;
+            this.altPwLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altPwLabel.Location = new System.Drawing.Point(30, 317);
+            this.altPwLabel.Name = "altPwLabel";
+            this.altPwLabel.Size = new System.Drawing.Size(108, 24);
+            this.altPwLabel.TabIndex = 50;
+            this.altPwLabel.Text = "Passwort alt";
+            // 
+            // altPWBox
+            // 
+            this.altPWBox.Location = new System.Drawing.Point(167, 315);
+            this.altPWBox.Name = "altPWBox";
+            this.altPWBox.ReadOnly = true;
+            this.altPWBox.Size = new System.Drawing.Size(282, 30);
+            this.altPWBox.TabIndex = 49;
+            // 
+            // pwIDBox
+            // 
+            this.pwIDBox.Location = new System.Drawing.Point(167, 255);
+            this.pwIDBox.Name = "pwIDBox";
+            this.pwIDBox.ReadOnly = true;
+            this.pwIDBox.Size = new System.Drawing.Size(282, 30);
+            this.pwIDBox.TabIndex = 48;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(30, 258);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 25);
+            this.label14.TabIndex = 47;
+            this.label14.Text = "ID";
+            // 
             // pwInfoLabel
             // 
             this.pwInfoLabel.AutoSize = true;
             this.pwInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pwInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.pwInfoLabel.Location = new System.Drawing.Point(29, 477);
+            this.pwInfoLabel.Location = new System.Drawing.Point(29, 495);
             this.pwInfoLabel.Name = "pwInfoLabel";
             this.pwInfoLabel.Size = new System.Drawing.Size(0, 20);
             this.pwInfoLabel.TabIndex = 46;
@@ -971,7 +1011,7 @@
             this.logoutPWButton.BackColor = System.Drawing.Color.DeepPink;
             this.logoutPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logoutPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutPWButton.Location = new System.Drawing.Point(485, 562);
+            this.logoutPWButton.Location = new System.Drawing.Point(485, 578);
             this.logoutPWButton.Name = "logoutPWButton";
             this.logoutPWButton.Size = new System.Drawing.Size(136, 35);
             this.logoutPWButton.TabIndex = 17;
@@ -984,7 +1024,7 @@
             this.closePWButton.BackColor = System.Drawing.Color.DeepPink;
             this.closePWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.closePWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closePWButton.Location = new System.Drawing.Point(706, 562);
+            this.closePWButton.Location = new System.Drawing.Point(706, 578);
             this.closePWButton.Name = "closePWButton";
             this.closePWButton.Size = new System.Drawing.Size(136, 35);
             this.closePWButton.TabIndex = 16;
@@ -996,7 +1036,7 @@
             // 
             this.pWLabel.AutoSize = true;
             this.pWLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pWLabel.Location = new System.Drawing.Point(30, 397);
+            this.pWLabel.Location = new System.Drawing.Point(30, 434);
             this.pWLabel.Name = "pWLabel";
             this.pWLabel.Size = new System.Drawing.Size(115, 48);
             this.pWLabel.TabIndex = 14;
@@ -1004,7 +1044,7 @@
             // 
             // passwordWdhBox
             // 
-            this.passwordWdhBox.Location = new System.Drawing.Point(167, 397);
+            this.passwordWdhBox.Location = new System.Drawing.Point(167, 444);
             this.passwordWdhBox.Name = "passwordWdhBox";
             this.passwordWdhBox.ReadOnly = true;
             this.passwordWdhBox.Size = new System.Drawing.Size(282, 30);
@@ -1013,16 +1053,16 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(29, 337);
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(28, 379);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(92, 25);
+            this.passwordLabel.Size = new System.Drawing.Size(123, 24);
             this.passwordLabel.TabIndex = 12;
-            this.passwordLabel.Text = "Passwort";
+            this.passwordLabel.Text = "Passwort neu";
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(167, 337);
+            this.passwordBox.Location = new System.Drawing.Point(167, 377);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.ReadOnly = true;
             this.passwordBox.Size = new System.Drawing.Size(282, 30);
@@ -1038,8 +1078,8 @@
             this.changePWButton.Size = new System.Drawing.Size(106, 35);
             this.changePWButton.TabIndex = 10;
             this.changePWButton.Text = "Ändern";
-            this.toolTip2.SetToolTip(this.changePWButton, "Wenn Sie diesen Button drücken können Sie ein altes Password ändern.\r\nVorher müss" +
-        "en sie aber ein Password aus der Liste auswählen");
+            this.toolTip2.SetToolTip(this.changePWButton, "Wenn Sie diesen Button drücken können Sie ein altes Passwort ändern.\r\nVorher müss" +
+        "en sie aber ein Passwort aus der Liste auswählen");
             this.changePWButton.UseVisualStyleBackColor = false;
             this.changePWButton.Click += new System.EventHandler(this.changePWButton_Click);
             // 
@@ -1053,8 +1093,8 @@
             this.createButtonPW.Size = new System.Drawing.Size(106, 35);
             this.createButtonPW.TabIndex = 9;
             this.createButtonPW.Text = "erstellen";
-            this.toolTip1.SetToolTip(this.createButtonPW, "Wenn Sie diesen Button drücken, können Sie ein neues Passwort für \r\neinen Nutzer " +
-        "anlegen, hier müssen Sie aber dieses selbst angeben.");
+            this.toolTip1.SetToolTip(this.createButtonPW, "Wenn Sie diesen Button drücken, können Sie einen Nutzer der \r\nPasswort-Datenbank " +
+        "hinzufügen, dessen Passwort zunächst leer ist. ");
             this.createButtonPW.UseVisualStyleBackColor = false;
             this.createButtonPW.Click += new System.EventHandler(this.createButtonPW_Click);
             // 
@@ -1069,7 +1109,8 @@
             this.initButton.TabIndex = 8;
             this.initButton.Text = "generien";
             this.toolTip1.SetToolTip(this.initButton, "Wenn Sie diesen Button drücken, können Sie ein neues Passwort für \r\neinen Nutzer " +
-        "anlegen lassen, welches Sie nicht selbst erzeugen müssen.");
+        "anlegen lassen, welches Sie nicht selbst erzeugen müssen.\r\nDazu müssen Sie den N" +
+        "utzer in der Liste auswählen. ");
             this.initButton.UseVisualStyleBackColor = false;
             this.initButton.Click += new System.EventHandler(this.initButton_Click);
             // 
@@ -1083,7 +1124,7 @@
             this.deleteButton.Size = new System.Drawing.Size(106, 35);
             this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Löschen";
-            this.toolTip1.SetToolTip(this.deleteButton, "Wenn Sie diesen Button drücken, können Sie ein Password löschen.\r\nVorher müssen S" +
+            this.toolTip1.SetToolTip(this.deleteButton, "Wenn Sie diesen Button drücken, können Sie ein Passwort löschen.\r\nVorher müssen S" +
         "ie aber ein Passwort aus der Liste wählen.");
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -1091,16 +1132,17 @@
             // confirmPWButton
             // 
             this.confirmPWButton.BackColor = System.Drawing.Color.DeepPink;
+            this.confirmPWButton.Enabled = false;
             this.confirmPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirmPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPWButton.Location = new System.Drawing.Point(34, 562);
+            this.confirmPWButton.Location = new System.Drawing.Point(34, 580);
             this.confirmPWButton.Name = "confirmPWButton";
             this.confirmPWButton.Size = new System.Drawing.Size(155, 35);
             this.confirmPWButton.TabIndex = 6;
             this.confirmPWButton.Text = "Bestätigen";
-            this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
-        "gen möchten (vorher muss der Erstellen  oder Ändern Button genutzt worden sein)");
+            this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\n");
             this.confirmPWButton.UseVisualStyleBackColor = false;
+            this.confirmPWButton.Click += new System.EventHandler(this.confirmPWButton_Click);
             // 
             // showPWButton
             // 
@@ -1131,24 +1173,6 @@
             // toolTip1
             // 
             this.toolTip1.Tag = "hi";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(29, 273);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 25);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(167, 273);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(282, 30);
-            this.textBox1.TabIndex = 48;
             // 
             // MainView
             // 
@@ -1259,7 +1283,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button pruefenButton;
         private System.Windows.Forms.Label pwInfoLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pwIDBox;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label altPwLabel;
+        private System.Windows.Forms.TextBox altPWBox;
     }
 }

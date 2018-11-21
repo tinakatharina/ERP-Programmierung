@@ -45,3 +45,4 @@ C:\Users\tina8\Documents\aktuellesProject\ERP-Programmierung\Studienarbeit ERP-P
 C:\Users\tina8\Documents\aktuellesProject\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CopyComplete
 C:\Users\tina8\Documents\aktuellesProject\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\tina8\Documents\aktuellesProject\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CopyComplete
