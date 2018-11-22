@@ -120,16 +120,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void createButton_click(object sender, EventArgs e)
-        {
-            boxEditable();
-            boxClear();
-
-            provider.createUser("1", "100");
-
-
-        }
-
         private void confirmButton_Click(object sender, EventArgs e)
         {
 
@@ -447,21 +437,22 @@ namespace WindowsFormsApp1
             passwordListView.FullRowSelect = true;
         }
 
-        private void confirmPWButton_Click(object sender, EventArgs e)
+        private void confirmPWButton_Click_1(object sender, EventArgs e)
         {
             TimerStop();
             string s = pwIDBox.Text;
             int n;
-            if(passwordBox.ReadOnly)
+            if (passwordBox.ReadOnly)
             {
-                if(s != "" && int.TryParse(s, out n))
+                if (s != "" && int.TryParse(s, out n))
                 {
                     BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse res = provider.checkExistence(s);
-                    if(passwordListView.Items.Count == 1)
+                    if (passwordListView.Items.Count == 1)
                     {
+
                         prepareList();
                     }
-                    if(res.Customer.Length > 0 && passwordListView.FindItemWithText(s.PadLeft(10, '0')) == null)
+                    if (res.Customer.Length > 0 && passwordListView.FindItemWithText(s.PadLeft(10, '0')) == null)
                     {
                         provider.createPassword(s);
                         prepareList();
@@ -481,13 +472,29 @@ namespace WindowsFormsApp1
                     pwInfoLabel.Text = "Bitte geben Sie eine gültige ID ein!";
                     TimerStart();
                 }
-            } else
+            } else if(passwordWdhBox.ReadOnly)
+            {
+                if(provider.checkPassword(passwordListView.SelectedItems[0].Text, passwordBox.Text))
+                {
+                    pwInfoLabel.Text = "Das Passwort stimmt!";
+                    TimerStart();
+                } else
+                {
+                    pwInfoLabel.Text = "Das Passwort stimmt nicht!";
+                    TimerStart();
+
+                }
+                confirmPWButton.Enabled = false;
+                passwordBox.ReadOnly = true;
+                passwordBox.Text = "";
+            }
+            else
             {
                 string old = altPWBox.Text;
                 string newp = passwordBox.Text;
                 string wdh = passwordWdhBox.Text;
                 String selected = passwordListView.SelectedItems[0].Text;
-                if (newp != "" && wdh != "")
+                if (newp != "" && wdh != "" && newp.Length > 6)
                 {
                     if (int.TryParse(newp, out n))
                     {
@@ -515,7 +522,7 @@ namespace WindowsFormsApp1
                         }
                     } else
                     {
-                        pwInfoLabel.Text = "Das Passwort darf nur Zahlen enthalten!";
+                        pwInfoLabel.Text = "Das Passwort darf nur Zahlen enthalten (Länge > 6)!";
                         TimerStart();
                     }
                 } else
@@ -579,6 +586,33 @@ namespace WindowsFormsApp1
         private void endVWButton_Click(object sender, EventArgs e)
         {
             controller.Close();
+        }
+
+        private void createButton_Click_1(object sender, EventArgs e)
+        {
+            provider.createUser("1", "100");
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            provider.editUser("3");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimerStop();
+            if (passwordListView.SelectedItems.Count > 0)
+            {
+                passwordBox.ReadOnly = false;
+                confirmPWButton.Enabled = true;
+                TimerStart();
+                pwInfoLabel.Text = "Bitte geben Sie das zu überprüfende Passwort ein!";
+            }
+            else
+            {
+                TimerStart();
+                pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
+            }
         }
     }
 }

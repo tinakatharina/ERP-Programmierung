@@ -357,3 +357,138 @@ SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindun
    bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
    bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
    bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 3388 at 2018-11-22 12:18:30 (UTC+01:00 Mitteleuropäische Zeit)
+
+SAP .NET Connector 3.0 with file version 3.0.19.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+Working directory: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug
+Operating system: Windows 10 Home 64-bit 
+Processor: 4x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 913
+Hostname: DESKTOP-2D542VF, IP address: 192.168.56.1, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2018-11-22 12:18:30.958 [Thread 1]
+[GROUP=SPACE MSHOST=I48Z SAPROUTER=/H/proxy.hof-university.de/S/3299/H/saprouter.hcc.in.tum.de/S/3299/H/ ON_CCE=0 POOL_SIZE=10 CFIT=0x0023 SYSID=I48 USER=IDES-012 PASSWD=******** CLIENT=902 LANG=D NAME=I48]
+SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindung zum Benutzer
+   bei SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   bei SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   bei SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   bei SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   bei SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   bei SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 10328 at 2018-11-22 12:20:34 (UTC+01:00 Mitteleuropäische Zeit)
+
+SAP .NET Connector 3.0 with file version 3.0.19.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+Working directory: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug
+Operating system: Windows 10 Home 64-bit 
+Processor: 4x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 913
+Hostname: DESKTOP-2D542VF, IP address: 192.168.56.1, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2018-11-22 12:20:34.863 [Thread 1]
+[GROUP=SPACE MSHOST=I48Z SAPROUTER=/H/proxy.hof-university.de/S/3299/H/saprouter.hcc.in.tum.de/S/3299/H/ ON_CCE=0 POOL_SIZE=10 CFIT=0x0023 SYSID=I48 USER=IDES-012 PASSWD=******** CLIENT=902 LANG=D NAME=I48]
+SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindung zum Benutzer
+   bei SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   bei SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   bei SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   bei SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   bei SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   bei SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 14032 at 2018-11-22 12:34:51 (UTC+01:00 Mitteleuropäische Zeit)
+
+SAP .NET Connector 3.0 with file version 3.0.19.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+Working directory: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug
+Operating system: Windows 10 Home 64-bit 
+Processor: 4x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 913
+Hostname: DESKTOP-2D542VF, IP address: 192.168.56.1, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2018-11-22 12:34:51.269 [Thread 1]
+[GROUP=SPACE MSHOST=I48Z SAPROUTER=/H/proxy.hof-university.de/S/3299/H/saprouter.hcc.in.tum.de/S/3299/H/ ON_CCE=0 POOL_SIZE=10 CFIT=0x0023 SYSID=I48 USER=IDES-012 PASSWD=******** CLIENT=902 LANG=D NAME=I48]
+SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindung zum Benutzer
+   bei SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   bei SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   bei SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   bei SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   bei SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   bei SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 10160 at 2018-11-22 13:00:17 (UTC+01:00 Mitteleuropäische Zeit)
+
+SAP .NET Connector 3.0 with file version 3.0.19.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+Working directory: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug
+Operating system: Windows 10 Home 64-bit 
+Processor: 4x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 913
+Hostname: DESKTOP-2D542VF, IP address: 172.16.24.9, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2018-11-22 13:00:17.221 [Thread 1]
+[GROUP=SPACE MSHOST=I48Z SAPROUTER=/H/proxy.hof-university.de/S/3299/H/saprouter.hcc.in.tum.de/S/3299/H/ ON_CCE=0 POOL_SIZE=10 CFIT=0x0023 SYSID=I48 USER=IDES-012 PASSWD=******** CLIENT=902 LANG=D NAME=I48]
+SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindung zum Benutzer
+   bei SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   bei SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   bei SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   bei SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   bei SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   bei SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 12980 at 2018-11-22 13:50:14 (UTC+01:00 Mitteleuropäische Zeit)
+
+SAP .NET Connector 3.0 with file version 3.0.19.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+Working directory: C:\Users\strau\Desktop\Christa\Studium\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug
+Operating system: Windows 10 Home 64-bit 
+Processor: 4x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 913
+Hostname: DESKTOP-2D542VF, IP address: 172.16.24.9, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2018-11-22 13:50:14.359 [Thread 1]
+[GROUP=SPACE MSHOST=I48Z SAPROUTER=/H/proxy.hof-university.de/S/3299/H/saprouter.hcc.in.tum.de/S/3299/H/ ON_CCE=0 POOL_SIZE=10 CFIT=0x0023 SYSID=I48 USER=IDES-012 PASSWD=******** CLIENT=902 LANG=D NAME=I48]
+SAP.Middleware.Connector.RfcCommunicationException: Dynproausgabe ohne Verbindung zum Benutzer
+   bei SAP.Middleware.Connector.CpicConnection.ThrowCpicErrorMsg(Int32 length, Int32 dataReceived)
+   bei SAP.Middleware.Connector.CpicConnection.CpicReceive(Int32 timeout)
+   bei SAP.Middleware.Connector.CpicConnection.Read(Byte* buffer, Int32 offset, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   bei SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   bei SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   bei SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   bei SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   bei SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   bei SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
