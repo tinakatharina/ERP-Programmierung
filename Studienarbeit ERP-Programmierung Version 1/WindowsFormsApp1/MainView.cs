@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows;
 using WindowsFormsApp1.BusPartnerEmployee;
 
 namespace WindowsFormsApp1
@@ -16,7 +8,7 @@ namespace WindowsFormsApp1
     {
         private BusPartnerEmployeeController controller = new BusPartnerEmployeeController();
         private BusPartnerEmployeeDataProvider provider = new BusPartnerEmployeeDataProvider();
-        private Timer timer = new Timer();
+        private Timer timer = new Timer(); //Timer zum Ein- und Ausblenden der Infotexte für den User
 
 
         public MainView()
@@ -25,6 +17,7 @@ namespace WindowsFormsApp1
             InitializeElements();
         }
 
+        /*Initialisieren der Tabellen*/
         private void InitializeElements()
         {
             employeeListView.View = View.Details;
@@ -55,7 +48,7 @@ namespace WindowsFormsApp1
             passwordListView.Columns[2].Width = 90;
 
 
-            employeeVWlist.View = View.Details;
+           /* employeeVWlist.View = View.Details;
 
             String[] columnKeys2 = { "employeeId", "firstName", "lastName" };
             String[] columnTexts2 = { "ID", "Vorname", "Nachname" };
@@ -66,7 +59,7 @@ namespace WindowsFormsApp1
 
             employeeVWlist.Columns[0].Width = 100;
             employeeVWlist.Columns[1].Width = 70;
-            employeeVWlist.Columns[2].Width = 90;
+            employeeVWlist.Columns[2].Width = 90;*/
 
         }
 
@@ -91,6 +84,22 @@ namespace WindowsFormsApp1
             pwInfoLabel.Text = "";
         }
 
+
+
+        /************************* Übersicht-Tab ***********************/
+
+
+
+
+        /************************ Verwaltung-Tab ***********************/
+
+
+
+
+        /*********************** Passwort-Tab **************************/
+
+
+        /*Füllt dei Felder mit den Details des ausgewählten Nutzers, nachdem der 'Detail'-Button betätigt wurde*/
         private void detailsButton_Click(object sender, EventArgs e)
         {
             boxReadOnly();
@@ -106,31 +115,13 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void changeButton_click(object sender, EventArgs e)
-        {
-            TimerStop();
-            if(employeeListView.SelectedItems.Count >0)
-            {
-                boxFill();
-                boxEditable();
-            } else
-            {
-                TimerStart();
-                infoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
-            }
-        }
-
-        private void confirmButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /*Füllt die Ansprechpartner-List, nachdem der 'Anzeigen'-Button betätigt wurde*/
         private void getListButton_Click(object sender, EventArgs e)
         {
             prepareEmployeeList(employeeListView);
         }
 
-
+        /*Füllt die Ansprechpartner-Liste*/
         private void prepareEmployeeList(ListView lv)
         {
             lv.Items.Clear();
@@ -145,17 +136,19 @@ namespace WindowsFormsApp1
             lv.FullRowSelect = true;           
         }
 
-
+        /*Ausloggen*/
         private void logoutButton_Click(object sender, EventArgs e)
         {
             controller.Logout();
         }
 
+        /*schließen*/
         private void closeButton_Click(object sender, EventArgs e)
         {
             controller.Close();
         }
 
+        /*Ermöglicht das Passwort-Ändern, nachdem der 'Ändern'-Button gedrückt wurde*/
         private void createButtonPW_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -165,6 +158,7 @@ namespace WindowsFormsApp1
             TimerStart();
         }
 
+        /*löscht den ausgewählten Nutzer aus der Passwort-Datenbank*/
         private void deleteButton_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -172,6 +166,8 @@ namespace WindowsFormsApp1
             {
                 String selected = passwordListView.SelectedItems[0].Text;
                 provider.deletePassword(selected);
+                pwInfoLabel.Text = "Die Liste wird vorbereitet,\ndies dauert einen Moment...";
+                TimerStart();
                 prepareList();
                 boxClear2();
                 TimerStart();
@@ -184,6 +180,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        /*Die Passwort-Liste wird gefüllt, nachdem der 'Anzeigen'-Button gedrückt wurde*/
         private void showPWButton_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -192,21 +189,19 @@ namespace WindowsFormsApp1
             prepareList();
         }
 
+        /*Logout*/
         private void logoutPWButton_Click(object sender, EventArgs e)
         {
             controller.Logout();
         }
 
+        /*schließen*/
         private void closePWButton_Click(object sender, EventArgs e)
         {
             controller.Close();
         }
 
-        private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /*macht alle Boxen auf der Übersicht-Seite editierbar*/
         private void boxEditable()
         {
             firstnameBox.ReadOnly = false;
@@ -226,6 +221,7 @@ namespace WindowsFormsApp1
             titleBox.Enabled = true;
         }
 
+        /*macht alle Boxen auf der Übersicht-Seite nicht editierbar*/
         private void boxReadOnly()
         {
             firstnameBox.ReadOnly = true;
@@ -245,6 +241,7 @@ namespace WindowsFormsApp1
             titleBox.Enabled = false;
         }
 
+        /*leert alle Boxen auf der Übersicht-Seite*/
         private void boxClear()
         {
             firstnameBox.Text = "";
@@ -264,6 +261,7 @@ namespace WindowsFormsApp1
             titleBox.SelectedIndex = 0;
         }
 
+        /*füllt alle Boxen auf der Übersicht-Seite mit den Daten zum ausgewähltem Mitarbeiter*/
         private void boxFill()
         {
             String selected = employeeListView.SelectedItems[0].Text;
@@ -291,6 +289,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        /*füllt alle Boxen auf der Passwort-Seite mit den Daten zum ausgewähltem Mitarbeiter*/
         private void boxFill2()
         {
             String selected = passwordListView.SelectedItems[0].Text;
@@ -309,6 +308,7 @@ namespace WindowsFormsApp1
 
         }
 
+        /*leert alle Boxen auf der Passwort-Seite*/
         private void boxClear2()
         {
             TypTextBox.Text = "";
@@ -323,7 +323,7 @@ namespace WindowsFormsApp1
             UpdpassTextbox.Text = "";
         }
 
-
+        /*generiert ein Initialpasswort, nachdem der 'Generieren'-Button betätigt wurde*/
         private void initButton_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -341,29 +341,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void listLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /*Testet, ob ein Nutzer zur eingegeben ID existiert, nachdem der Button gedrückt wurde*/
         private void button2_Click(object sender, EventArgs e)
         {
             TimerStop();
             String s = textBox11.Text;
             int n;
             bool isNumeric = int.TryParse(s, out n);
-
-
+            
             if (isNumeric == true)
             {
                 BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse res = provider.checkExistence(s);
@@ -385,6 +370,7 @@ namespace WindowsFormsApp1
             } 
         }
 
+        /*Füllt die Boxen mit den passenden Daten zu dem ausgwählten Eintrag*/
         private void pwInfoButton_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -399,6 +385,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        /*ermöglicht das Passwortändern, nachdem der 'Ändern'-Button betätigt wurde*/
         private void changePWButton_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -418,6 +405,7 @@ namespace WindowsFormsApp1
 
         }
 
+        /*füllt die Passwortliste*/
         private void prepareList()
         {
             passwordListView.Items.Clear();
@@ -437,6 +425,7 @@ namespace WindowsFormsApp1
             passwordListView.FullRowSelect = true;
         }
 
+        /*führt je nachdem, was zuvor gemacht wurde, die passende Aktion / Überprüfung durch*/
         private void confirmPWButton_Click_1(object sender, EventArgs e)
         {
             TimerStop();
@@ -449,12 +438,15 @@ namespace WindowsFormsApp1
                     BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse res = provider.checkExistence(s);
                     if (passwordListView.Items.Count == 1)
                     {
-
+                        pwInfoLabel.Text = "Die Liste wird vorbereitet,\ndies dauert einen Moment...";
+                        TimerStart();
                         prepareList();
                     }
                     if (res.Customer.Length > 0 && passwordListView.FindItemWithText(s.PadLeft(10, '0')) == null)
                     {
                         provider.createPassword(s);
+                        pwInfoLabel.Text = "Die Liste wird vorbereitet,\ndies dauert einen Moment...";
+                        TimerStart();
                         prepareList();
                         confirmPWButton.Enabled = false;
                         pwIDBox.Text = "";
@@ -533,41 +525,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void Übersicht_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /*
         private void showVWButton_Click(object sender, EventArgs e)
         {
             prepareEmployeeList(employeeVWlist);
@@ -590,14 +548,16 @@ namespace WindowsFormsApp1
 
         private void createButton_Click_1(object sender, EventArgs e)
         {
-            provider.createUser("1", "100");
+          //  provider.createUser("1", "100");
         }
 
         private void checkButton_Click(object sender, EventArgs e)
         {
-            provider.editUser("3");
+          //  provider.editUser("3");
         }
+        */
 
+        /*Überprüfung, ob ein Passwort zu dem ausgewählten Nutzer gehört*/
         private void button1_Click(object sender, EventArgs e)
         {
             TimerStop();
@@ -613,6 +573,13 @@ namespace WindowsFormsApp1
                 TimerStart();
                 pwInfoLabel.Text = "Bitte wählen Sie zuerst einen Eintrag aus!";
             }
+        }
+
+        /*zeigt auf Wunsch die nächste freie ID an*/
+        private void serachButton_Click(object sender, EventArgs e)
+        {
+            BusPartnerEmployeeGetInternalNumberResponse res = provider.InternalNumber(1);
+            nextIDBox.Text = res.ContactId;
         }
     }
 }

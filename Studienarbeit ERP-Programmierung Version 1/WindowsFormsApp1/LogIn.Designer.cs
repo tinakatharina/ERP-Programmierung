@@ -63,7 +63,6 @@
             this.loginPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.loginPicture.TabIndex = 1;
             this.loginPicture.TabStop = false;
-            this.loginPicture.Click += new System.EventHandler(this.loginPicture_click);
             // 
             // welcomeLabel1
             // 

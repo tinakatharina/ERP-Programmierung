@@ -8,13 +8,14 @@ using SAP.Middleware.Connector;
 
 namespace WindowsFormsApp1
 {
+    /*Stellt die Verbindung zum .Net Connector her*/
     class Connector
     {
 
         private RfcRepository repo;
         private RfcDestination destination;
 
-        private void makeConnection()
+        public void makeConnection()
         {
             var parameters = new RfcConfigParameters
             {
@@ -25,15 +26,24 @@ namespace WindowsFormsApp1
                 { RfcConfigParameters.PoolSize, "10" },
                 { RfcConfigParameters.CharacterFaultIndicatorToken, "0x0023" },
                 { RfcConfigParameters.SystemID, "I48" },
-                { RfcConfigParameters.User, "IDES-016" },
-                { RfcConfigParameters.Password, "geheim01" },
+                { RfcConfigParameters.User, "IDES-012" },
+                { RfcConfigParameters.Password, "erpprogrammierung" },
                 { RfcConfigParameters.Client, "902" },
                 { RfcConfigParameters.Language, "D" },
                 { RfcConfigParameters.Name, "I48" }
             };
             destination = RfcDestinationManager.GetDestination(parameters);
             repo = destination.Repository;
+        }
 
+        public RfcRepository getRepo()
+        {
+            return repo;
+        }
+
+        public RfcDestination getDes()
+        {
+            return destination;
         }
     }
 }
