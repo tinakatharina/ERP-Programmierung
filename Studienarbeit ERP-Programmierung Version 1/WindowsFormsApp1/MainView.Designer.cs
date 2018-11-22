@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.Passwörter = new System.Windows.Forms.TabControl();
-            this.Mitarbeiter = new System.Windows.Forms.TabPage();
+            this.Übersicht = new System.Windows.Forms.TabPage();
             this.pruefenButton = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.employeeListView = new System.Windows.Forms.ListView();
             this.logoutButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.confirmButton = new System.Windows.Forms.Button();
             this.lastnameLabel = new System.Windows.Forms.Label();
             this.telLabel = new System.Windows.Forms.Label();
             this.regionLabel = new System.Windows.Forms.Label();
@@ -70,8 +70,6 @@
             this.emailBox = new System.Windows.Forms.TextBox();
             this.lastnameBox = new System.Windows.Forms.TextBox();
             this.customerBox = new System.Windows.Forms.TextBox();
-            this.createButton = new System.Windows.Forms.Button();
-            this.changeButton = new System.Windows.Forms.Button();
             this.detailsButton = new System.Windows.Forms.Button();
             this.getListButton = new System.Windows.Forms.Button();
             this.listEmployeeLabel = new System.Windows.Forms.Label();
@@ -116,19 +114,38 @@
             this.createButtonPW = new System.Windows.Forms.Button();
             this.initButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.confirmPWButton = new System.Windows.Forms.Button();
             this.showPWButton = new System.Windows.Forms.Button();
             this.listLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.Verwaltung = new System.Windows.Forms.TabPage();
+            this.checkButton = new System.Windows.Forms.Button();
+            this.createButton = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.logoutVWButton = new System.Windows.Forms.Button();
+            this.endVWButton = new System.Windows.Forms.Button();
+            this.employeeVWlist = new System.Windows.Forms.ListView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.showVWButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.customerNrBox = new System.Windows.Forms.TextBox();
+            this.vendorNrBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.employeeNrBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.infoVWLabel = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.confirmPWButton = new System.Windows.Forms.Button();
             this.Passwörter.SuspendLayout();
-            this.Mitarbeiter.SuspendLayout();
+            this.Übersicht.SuspendLayout();
             this.Passwoerter.SuspendLayout();
+            this.Verwaltung.SuspendLayout();
             this.SuspendLayout();
             // 
             // Passwörter
             // 
-            this.Passwörter.Controls.Add(this.Mitarbeiter);
+            this.Passwörter.Controls.Add(this.Übersicht);
+            this.Passwörter.Controls.Add(this.Verwaltung);
             this.Passwörter.Controls.Add(this.Passwoerter);
             this.Passwörter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwörter.Location = new System.Drawing.Point(3, 12);
@@ -137,66 +154,64 @@
             this.Passwörter.Size = new System.Drawing.Size(1325, 714);
             this.Passwörter.TabIndex = 0;
             // 
-            // Mitarbeiter
+            // Übersicht
             // 
-            this.Mitarbeiter.BackColor = System.Drawing.Color.White;
-            this.Mitarbeiter.Controls.Add(this.pruefenButton);
-            this.Mitarbeiter.Controls.Add(this.textBox11);
-            this.Mitarbeiter.Controls.Add(this.label13);
-            this.Mitarbeiter.Controls.Add(this.infoLabel);
-            this.Mitarbeiter.Controls.Add(this.streetBox);
-            this.Mitarbeiter.Controls.Add(this.countryBox);
-            this.Mitarbeiter.Controls.Add(this.adressCodeBox);
-            this.Mitarbeiter.Controls.Add(this.regionBox);
-            this.Mitarbeiter.Controls.Add(this.titleBox);
-            this.Mitarbeiter.Controls.Add(this.plzLabel);
-            this.Mitarbeiter.Controls.Add(this.adressCodeLabel);
-            this.Mitarbeiter.Controls.Add(this.streetLabel);
-            this.Mitarbeiter.Controls.Add(this.persNrLabel);
-            this.Mitarbeiter.Controls.Add(this.customerLabel);
-            this.Mitarbeiter.Controls.Add(this.countryLabel);
-            this.Mitarbeiter.Controls.Add(this.faxLabel);
-            this.Mitarbeiter.Controls.Add(this.cityLabel);
-            this.Mitarbeiter.Controls.Add(this.titleLabel);
-            this.Mitarbeiter.Controls.Add(this.emailLabel);
-            this.Mitarbeiter.Controls.Add(this.functionLabel);
-            this.Mitarbeiter.Controls.Add(this.telBox);
-            this.Mitarbeiter.Controls.Add(this.faxBox);
-            this.Mitarbeiter.Controls.Add(this.persNrBox);
-            this.Mitarbeiter.Controls.Add(this.functionBox);
-            this.Mitarbeiter.Controls.Add(this.plzBox);
-            this.Mitarbeiter.Controls.Add(this.cityBox);
-            this.Mitarbeiter.Controls.Add(this.employeeListView);
-            this.Mitarbeiter.Controls.Add(this.logoutButton);
-            this.Mitarbeiter.Controls.Add(this.closeButton);
-            this.Mitarbeiter.Controls.Add(this.confirmButton);
-            this.Mitarbeiter.Controls.Add(this.lastnameLabel);
-            this.Mitarbeiter.Controls.Add(this.telLabel);
-            this.Mitarbeiter.Controls.Add(this.regionLabel);
-            this.Mitarbeiter.Controls.Add(this.firstnameLabel);
-            this.Mitarbeiter.Controls.Add(this.firstnameBox);
-            this.Mitarbeiter.Controls.Add(this.emailBox);
-            this.Mitarbeiter.Controls.Add(this.lastnameBox);
-            this.Mitarbeiter.Controls.Add(this.customerBox);
-            this.Mitarbeiter.Controls.Add(this.createButton);
-            this.Mitarbeiter.Controls.Add(this.changeButton);
-            this.Mitarbeiter.Controls.Add(this.detailsButton);
-            this.Mitarbeiter.Controls.Add(this.getListButton);
-            this.Mitarbeiter.Controls.Add(this.listEmployeeLabel);
-            this.Mitarbeiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mitarbeiter.Location = new System.Drawing.Point(4, 34);
-            this.Mitarbeiter.Name = "Mitarbeiter";
-            this.Mitarbeiter.Padding = new System.Windows.Forms.Padding(3);
-            this.Mitarbeiter.Size = new System.Drawing.Size(1317, 676);
-            this.Mitarbeiter.TabIndex = 0;
-            this.Mitarbeiter.Text = "Mitarbeiter";
+            this.Übersicht.BackColor = System.Drawing.Color.White;
+            this.Übersicht.Controls.Add(this.pruefenButton);
+            this.Übersicht.Controls.Add(this.textBox11);
+            this.Übersicht.Controls.Add(this.label13);
+            this.Übersicht.Controls.Add(this.infoLabel);
+            this.Übersicht.Controls.Add(this.streetBox);
+            this.Übersicht.Controls.Add(this.countryBox);
+            this.Übersicht.Controls.Add(this.adressCodeBox);
+            this.Übersicht.Controls.Add(this.regionBox);
+            this.Übersicht.Controls.Add(this.titleBox);
+            this.Übersicht.Controls.Add(this.plzLabel);
+            this.Übersicht.Controls.Add(this.adressCodeLabel);
+            this.Übersicht.Controls.Add(this.streetLabel);
+            this.Übersicht.Controls.Add(this.persNrLabel);
+            this.Übersicht.Controls.Add(this.customerLabel);
+            this.Übersicht.Controls.Add(this.countryLabel);
+            this.Übersicht.Controls.Add(this.faxLabel);
+            this.Übersicht.Controls.Add(this.cityLabel);
+            this.Übersicht.Controls.Add(this.titleLabel);
+            this.Übersicht.Controls.Add(this.emailLabel);
+            this.Übersicht.Controls.Add(this.functionLabel);
+            this.Übersicht.Controls.Add(this.telBox);
+            this.Übersicht.Controls.Add(this.faxBox);
+            this.Übersicht.Controls.Add(this.persNrBox);
+            this.Übersicht.Controls.Add(this.functionBox);
+            this.Übersicht.Controls.Add(this.plzBox);
+            this.Übersicht.Controls.Add(this.cityBox);
+            this.Übersicht.Controls.Add(this.employeeListView);
+            this.Übersicht.Controls.Add(this.logoutButton);
+            this.Übersicht.Controls.Add(this.closeButton);
+            this.Übersicht.Controls.Add(this.lastnameLabel);
+            this.Übersicht.Controls.Add(this.telLabel);
+            this.Übersicht.Controls.Add(this.regionLabel);
+            this.Übersicht.Controls.Add(this.firstnameLabel);
+            this.Übersicht.Controls.Add(this.firstnameBox);
+            this.Übersicht.Controls.Add(this.emailBox);
+            this.Übersicht.Controls.Add(this.lastnameBox);
+            this.Übersicht.Controls.Add(this.customerBox);
+            this.Übersicht.Controls.Add(this.detailsButton);
+            this.Übersicht.Controls.Add(this.getListButton);
+            this.Übersicht.Controls.Add(this.listEmployeeLabel);
+            this.Übersicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Übersicht.Location = new System.Drawing.Point(4, 34);
+            this.Übersicht.Name = "Übersicht";
+            this.Übersicht.Padding = new System.Windows.Forms.Padding(3);
+            this.Übersicht.Size = new System.Drawing.Size(1317, 676);
+            this.Übersicht.TabIndex = 0;
+            this.Übersicht.Text = "Übersicht";
+            this.Übersicht.Click += new System.EventHandler(this.Übersicht_Click);
             // 
             // pruefenButton
             // 
             this.pruefenButton.BackColor = System.Drawing.Color.DeepPink;
             this.pruefenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.pruefenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pruefenButton.Location = new System.Drawing.Point(1195, 550);
+            this.pruefenButton.Location = new System.Drawing.Point(1214, 550);
             this.pruefenButton.Name = "pruefenButton";
             this.pruefenButton.Size = new System.Drawing.Size(85, 32);
             this.pruefenButton.TabIndex = 49;
@@ -219,11 +234,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(905, 509);
+            this.label13.Location = new System.Drawing.Point(897, 511);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(348, 24);
+            this.label13.Size = new System.Drawing.Size(402, 24);
             this.label13.TabIndex = 47;
-            this.label13.Text = "Verfügbarkeit einer Mitarbeiter-ID prüfen:\r\n";
+            this.label13.Text = "Verfügbarkeit einer Ansprechpartner-ID prüfen:\r\n";
             // 
             // infoLabel
             // 
@@ -286,7 +301,6 @@
             this.titleBox.Name = "titleBox";
             this.titleBox.Size = new System.Drawing.Size(133, 30);
             this.titleBox.TabIndex = 39;
-            this.titleBox.Text = "--Wählen--";
             // 
             // plzLabel
             // 
@@ -457,7 +471,7 @@
             this.employeeListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeListView.Location = new System.Drawing.Point(901, 90);
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(379, 402);
+            this.employeeListView.Size = new System.Drawing.Size(398, 402);
             this.employeeListView.TabIndex = 19;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.SelectedIndexChanged += new System.EventHandler(this.employeeListView_SelectedIndexChanged);
@@ -481,7 +495,7 @@
             this.closeButton.BackColor = System.Drawing.Color.DeepPink;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(1149, 624);
+            this.closeButton.Location = new System.Drawing.Point(1168, 624);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(131, 35);
             this.closeButton.TabIndex = 17;
@@ -489,21 +503,6 @@
             this.toolTip1.SetToolTip(this.closeButton, "Klicken Sie diesen Button, wenn Sie das Programm beenden möchten");
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // confirmButton
-            // 
-            this.confirmButton.BackColor = System.Drawing.Color.DeepPink;
-            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmButton.Location = new System.Drawing.Point(29, 624);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(163, 35);
-            this.confirmButton.TabIndex = 14;
-            this.confirmButton.Text = "Bestätigen";
-            this.toolTip1.SetToolTip(this.confirmButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
-        "gen möchten (vorher muss der Ändern oder Anlegen Button genutzt worden sein)");
-            this.confirmButton.UseVisualStyleBackColor = false;
-            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // lastnameLabel
             // 
@@ -581,36 +580,6 @@
             this.customerBox.Size = new System.Drawing.Size(222, 30);
             this.customerBox.TabIndex = 6;
             // 
-            // createButton
-            // 
-            this.createButton.BackColor = System.Drawing.Color.DeepPink;
-            this.createButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createButton.Location = new System.Drawing.Point(285, 29);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(106, 35);
-            this.createButton.TabIndex = 5;
-            this.createButton.Text = "Anlegen";
-            this.toolTip1.SetToolTip(this.createButton, "Klicken Sie diesen Button, wenn Sie einen neuen\r\n Eintrag in der Tabelle anlegen " +
-        "möchten");
-            this.createButton.UseVisualStyleBackColor = false;
-            this.createButton.Click += new System.EventHandler(this.createButton_click);
-            // 
-            // changeButton
-            // 
-            this.changeButton.BackColor = System.Drawing.Color.DeepPink;
-            this.changeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.changeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeButton.Location = new System.Drawing.Point(154, 29);
-            this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(106, 35);
-            this.changeButton.TabIndex = 4;
-            this.changeButton.Text = "Ändern";
-            this.toolTip1.SetToolTip(this.changeButton, "Klicken Sie diesen Button, wenn Sie einen Eintrag verändern möchten.\r\n(Vorher mus" +
-        "s ein Eintrag aus der Liste ausgewählt worden sein :) )");
-            this.changeButton.UseVisualStyleBackColor = false;
-            this.changeButton.Click += new System.EventHandler(this.changeButton_click);
-            // 
             // detailsButton
             // 
             this.detailsButton.BackColor = System.Drawing.Color.DeepPink;
@@ -631,7 +600,7 @@
             this.getListButton.BackColor = System.Drawing.Color.DeepPink;
             this.getListButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.getListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getListButton.Location = new System.Drawing.Point(1149, 29);
+            this.getListButton.Location = new System.Drawing.Point(1168, 29);
             this.getListButton.Name = "getListButton";
             this.getListButton.Size = new System.Drawing.Size(130, 35);
             this.getListButton.TabIndex = 2;
@@ -647,12 +616,13 @@
             this.listEmployeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listEmployeeLabel.Location = new System.Drawing.Point(896, 34);
             this.listEmployeeLabel.Name = "listEmployeeLabel";
-            this.listEmployeeLabel.Size = new System.Drawing.Size(182, 25);
+            this.listEmployeeLabel.Size = new System.Drawing.Size(236, 25);
             this.listEmployeeLabel.TabIndex = 0;
-            this.listEmployeeLabel.Text = "Liste der Mitarbeiter";
+            this.listEmployeeLabel.Text = "Liste der Ansprechpartner";
             // 
             // Passwoerter
             // 
+            this.Passwoerter.Controls.Add(this.confirmPWButton);
             this.Passwoerter.Controls.Add(this.altPwLabel);
             this.Passwoerter.Controls.Add(this.altPWBox);
             this.Passwoerter.Controls.Add(this.pwIDBox);
@@ -693,7 +663,6 @@
             this.Passwoerter.Controls.Add(this.createButtonPW);
             this.Passwoerter.Controls.Add(this.initButton);
             this.Passwoerter.Controls.Add(this.deleteButton);
-            this.Passwoerter.Controls.Add(this.confirmPWButton);
             this.Passwoerter.Controls.Add(this.showPWButton);
             this.Passwoerter.Controls.Add(this.listLabel);
             this.Passwoerter.Location = new System.Drawing.Point(4, 34);
@@ -1005,6 +974,7 @@
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
             this.passwordListView.TabIndex = 18;
             this.passwordListView.UseCompatibleStateImageBehavior = false;
+            this.passwordListView.SelectedIndexChanged += new System.EventHandler(this.passwordListView_SelectedIndexChanged);
             // 
             // logoutPWButton
             // 
@@ -1129,21 +1099,6 @@
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // confirmPWButton
-            // 
-            this.confirmPWButton.BackColor = System.Drawing.Color.DeepPink;
-            this.confirmPWButton.Enabled = false;
-            this.confirmPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPWButton.Location = new System.Drawing.Point(34, 580);
-            this.confirmPWButton.Name = "confirmPWButton";
-            this.confirmPWButton.Size = new System.Drawing.Size(155, 35);
-            this.confirmPWButton.TabIndex = 6;
-            this.confirmPWButton.Text = "Bestätigen";
-            this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\n");
-            this.confirmPWButton.UseVisualStyleBackColor = false;
-            this.confirmPWButton.Click += new System.EventHandler(this.confirmPWButton_Click);
-            // 
             // showPWButton
             // 
             this.showPWButton.BackColor = System.Drawing.Color.DeepPink;
@@ -1174,6 +1129,234 @@
             // 
             this.toolTip1.Tag = "hi";
             // 
+            // Verwaltung
+            // 
+            this.Verwaltung.Controls.Add(this.label21);
+            this.Verwaltung.Controls.Add(this.infoVWLabel);
+            this.Verwaltung.Controls.Add(this.label19);
+            this.Verwaltung.Controls.Add(this.employeeNrBox);
+            this.Verwaltung.Controls.Add(this.label18);
+            this.Verwaltung.Controls.Add(this.vendorNrBox);
+            this.Verwaltung.Controls.Add(this.customerNrBox);
+            this.Verwaltung.Controls.Add(this.label17);
+            this.Verwaltung.Controls.Add(this.showVWButton);
+            this.Verwaltung.Controls.Add(this.label16);
+            this.Verwaltung.Controls.Add(this.employeeVWlist);
+            this.Verwaltung.Controls.Add(this.endVWButton);
+            this.Verwaltung.Controls.Add(this.logoutVWButton);
+            this.Verwaltung.Controls.Add(this.confirmButton);
+            this.Verwaltung.Controls.Add(this.createButton);
+            this.Verwaltung.Controls.Add(this.checkButton);
+            this.Verwaltung.Location = new System.Drawing.Point(4, 34);
+            this.Verwaltung.Name = "Verwaltung";
+            this.Verwaltung.Padding = new System.Windows.Forms.Padding(3);
+            this.Verwaltung.Size = new System.Drawing.Size(1317, 676);
+            this.Verwaltung.TabIndex = 2;
+            this.Verwaltung.Text = "Verwaltung";
+            this.Verwaltung.UseVisualStyleBackColor = true;
+            // 
+            // checkButton
+            // 
+            this.checkButton.BackColor = System.Drawing.Color.DeepPink;
+            this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkButton.Location = new System.Drawing.Point(608, 501);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(106, 35);
+            this.checkButton.TabIndex = 8;
+            this.checkButton.Text = "Prüfen";
+            this.toolTip1.SetToolTip(this.checkButton, "Klicken Sie diesen Button, wenn Sie einen Eintrag verändern möchten.\r\n(Vorher mus" +
+        "s ein Eintrag aus der Liste ausgewählt worden sein :) )");
+            this.checkButton.UseVisualStyleBackColor = false;
+            // 
+            // createButton
+            // 
+            this.createButton.BackColor = System.Drawing.Color.DeepPink;
+            this.createButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createButton.Location = new System.Drawing.Point(46, 70);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(106, 35);
+            this.createButton.TabIndex = 9;
+            this.createButton.Text = "Anlegen";
+            this.toolTip1.SetToolTip(this.createButton, "Klicken Sie diesen Button, wenn Sie einen neuen\r\n Eintrag in der Tabelle anlegen " +
+        "möchten");
+            this.createButton.UseVisualStyleBackColor = false;
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.BackColor = System.Drawing.Color.DeepPink;
+            this.confirmButton.Enabled = false;
+            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmButton.Location = new System.Drawing.Point(46, 612);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(163, 35);
+            this.confirmButton.TabIndex = 15;
+            this.confirmButton.Text = "Bestätigen";
+            this.toolTip1.SetToolTip(this.confirmButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
+        "gen möchten (vorher muss der Ändern oder Anlegen Button genutzt worden sein)");
+            this.confirmButton.UseVisualStyleBackColor = false;
+            // 
+            // logoutVWButton
+            // 
+            this.logoutVWButton.BackColor = System.Drawing.Color.DeepPink;
+            this.logoutVWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.logoutVWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutVWButton.Location = new System.Drawing.Point(893, 612);
+            this.logoutVWButton.Name = "logoutVWButton";
+            this.logoutVWButton.Size = new System.Drawing.Size(131, 35);
+            this.logoutVWButton.TabIndex = 19;
+            this.logoutVWButton.Text = "Ausloggen";
+            this.toolTip1.SetToolTip(this.logoutVWButton, "Klicken Sie diesen Button, wenn Sie sich ausloggen möchten");
+            this.logoutVWButton.UseVisualStyleBackColor = false;
+            this.logoutVWButton.Click += new System.EventHandler(this.logoutVWButton_Click);
+            // 
+            // endVWButton
+            // 
+            this.endVWButton.BackColor = System.Drawing.Color.DeepPink;
+            this.endVWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.endVWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endVWButton.Location = new System.Drawing.Point(1141, 612);
+            this.endVWButton.Name = "endVWButton";
+            this.endVWButton.Size = new System.Drawing.Size(131, 35);
+            this.endVWButton.TabIndex = 20;
+            this.endVWButton.Text = "Beenden";
+            this.toolTip1.SetToolTip(this.endVWButton, "Klicken Sie diesen Button, wenn Sie das Programm beenden möchten");
+            this.endVWButton.UseVisualStyleBackColor = false;
+            this.endVWButton.Click += new System.EventHandler(this.endVWButton_Click);
+            // 
+            // employeeVWlist
+            // 
+            this.employeeVWlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeVWlist.Location = new System.Drawing.Point(893, 110);
+            this.employeeVWlist.Name = "employeeVWlist";
+            this.employeeVWlist.Size = new System.Drawing.Size(396, 456);
+            this.employeeVWlist.TabIndex = 21;
+            this.employeeVWlist.UseCompatibleStateImageBehavior = false;
+            this.employeeVWlist.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(889, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(227, 24);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Liste der Ansprechpartner";
+            // 
+            // showVWButton
+            // 
+            this.showVWButton.BackColor = System.Drawing.Color.DeepPink;
+            this.showVWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.showVWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showVWButton.Location = new System.Drawing.Point(1159, 37);
+            this.showVWButton.Name = "showVWButton";
+            this.showVWButton.Size = new System.Drawing.Size(130, 35);
+            this.showVWButton.TabIndex = 23;
+            this.showVWButton.Text = "Anzeigen";
+            this.toolTip1.SetToolTip(this.showVWButton, "Klicken Sie diesen Button wenn Sie sich die Übersicht, \r\nüber alle Einträge anzei" +
+        "gen lassen möchten.");
+            this.showVWButton.UseVisualStyleBackColor = false;
+            this.showVWButton.Click += new System.EventHandler(this.showVWButton_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(41, 175);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 25);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "KundenNr.";
+            // 
+            // customerNrBox
+            // 
+            this.customerNrBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNrBox.Location = new System.Drawing.Point(223, 175);
+            this.customerNrBox.Name = "customerNrBox";
+            this.customerNrBox.ReadOnly = true;
+            this.customerNrBox.Size = new System.Drawing.Size(222, 30);
+            this.customerNrBox.TabIndex = 25;
+            // 
+            // vendorNrBox
+            // 
+            this.vendorNrBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorNrBox.Location = new System.Drawing.Point(223, 237);
+            this.vendorNrBox.Name = "vendorNrBox";
+            this.vendorNrBox.ReadOnly = true;
+            this.vendorNrBox.Size = new System.Drawing.Size(222, 30);
+            this.vendorNrBox.TabIndex = 26;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(41, 237);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(134, 25);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "LieferantenNr.";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // employeeNrBox
+            // 
+            this.employeeNrBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeNrBox.Location = new System.Drawing.Point(223, 364);
+            this.employeeNrBox.Name = "employeeNrBox";
+            this.employeeNrBox.ReadOnly = true;
+            this.employeeNrBox.Size = new System.Drawing.Size(222, 30);
+            this.employeeNrBox.TabIndex = 28;
+            this.employeeNrBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(508, 110);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(308, 306);
+            this.label19.TabIndex = 30;
+            this.label19.Text = resources.GetString("label19.Text");
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // infoVWLabel
+            // 
+            this.infoVWLabel.AutoSize = true;
+            this.infoVWLabel.ForeColor = System.Drawing.Color.Red;
+            this.infoVWLabel.Location = new System.Drawing.Point(41, 506);
+            this.infoVWLabel.Name = "infoVWLabel";
+            this.infoVWLabel.Size = new System.Drawing.Size(0, 25);
+            this.infoVWLabel.TabIndex = 31;
+            this.infoVWLabel.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(41, 364);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(157, 25);
+            this.label21.TabIndex = 32;
+            this.label21.Text = "Ansprechpartner";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            // 
+            // confirmPWButton
+            // 
+            this.confirmPWButton.BackColor = System.Drawing.Color.DeepPink;
+            this.confirmPWButton.Enabled = false;
+            this.confirmPWButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmPWButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPWButton.Location = new System.Drawing.Point(32, 576);
+            this.confirmPWButton.Name = "confirmPWButton";
+            this.confirmPWButton.Size = new System.Drawing.Size(163, 35);
+            this.confirmPWButton.TabIndex = 51;
+            this.confirmPWButton.Text = "Bestätigen";
+            this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
+        "gen möchten (vorher muss der Ändern oder Anlegen Button genutzt worden sein)");
+            this.confirmPWButton.UseVisualStyleBackColor = false;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1186,10 +1369,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bus Partner Employee";
             this.Passwörter.ResumeLayout(false);
-            this.Mitarbeiter.ResumeLayout(false);
-            this.Mitarbeiter.PerformLayout();
+            this.Übersicht.ResumeLayout(false);
+            this.Übersicht.PerformLayout();
             this.Passwoerter.ResumeLayout(false);
             this.Passwoerter.PerformLayout();
+            this.Verwaltung.ResumeLayout(false);
+            this.Verwaltung.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1197,7 +1382,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl Passwörter;
-        private System.Windows.Forms.TabPage Mitarbeiter;
+        private System.Windows.Forms.TabPage Übersicht;
         private System.Windows.Forms.TabPage Passwoerter;
         private System.Windows.Forms.Label listEmployeeLabel;
         private System.Windows.Forms.Label firstnameLabel;
@@ -1205,21 +1390,17 @@
         private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.TextBox lastnameBox;
         private System.Windows.Forms.TextBox customerBox;
-        private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.Button getListButton;
         private System.Windows.Forms.Label lastnameLabel;
         private System.Windows.Forms.Label telLabel;
         private System.Windows.Forms.Label regionLabel;
-        private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button changePWButton;
         private System.Windows.Forms.Button createButtonPW;
         private System.Windows.Forms.Button initButton;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button confirmPWButton;
         private System.Windows.Forms.Button showPWButton;
         private System.Windows.Forms.Label listLabel;
         private System.Windows.Forms.Label pWLabel;
@@ -1287,5 +1468,23 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label altPwLabel;
         private System.Windows.Forms.TextBox altPWBox;
+        private System.Windows.Forms.TabPage Verwaltung;
+        private System.Windows.Forms.Button confirmButton;
+        private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.Button showVWButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ListView employeeVWlist;
+        private System.Windows.Forms.Button endVWButton;
+        private System.Windows.Forms.Button logoutVWButton;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox vendorNrBox;
+        private System.Windows.Forms.TextBox customerNrBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label infoVWLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox employeeNrBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button confirmPWButton;
     }
 }

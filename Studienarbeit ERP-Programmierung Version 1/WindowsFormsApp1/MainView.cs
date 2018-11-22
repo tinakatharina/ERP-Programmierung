@@ -54,6 +54,20 @@ namespace WindowsFormsApp1
             passwordListView.Columns[1].Width = 70;
             passwordListView.Columns[2].Width = 90;
 
+
+            employeeVWlist.View = View.Details;
+
+            String[] columnKeys2 = { "employeeId", "firstName", "lastName" };
+            String[] columnTexts2 = { "ID", "Vorname", "Nachname" };
+
+            employeeVWlist.Columns.Add(columnKeys1[0], columnTexts1[0]);
+            employeeVWlist.Columns.Add(columnKeys1[1], columnTexts1[1]);
+            employeeVWlist.Columns.Add(columnKeys1[2], columnTexts1[2]);
+
+            employeeVWlist.Columns[0].Width = 100;
+            employeeVWlist.Columns[1].Width = 70;
+            employeeVWlist.Columns[2].Width = 90;
+
         }
 
 
@@ -123,17 +137,24 @@ namespace WindowsFormsApp1
 
         private void getListButton_Click(object sender, EventArgs e)
         {
-            employeeListView.Items.Clear();
+            prepareEmployeeList(employeeListView);
+        }
+
+
+        private void prepareEmployeeList(ListView lv)
+        {
+            lv.Items.Clear();
             BusPartnerEmployee.BusPartnerEmployeeGetListResponse listResponse = provider.GetList();
             foreach (BusPartnerEmployee.BapicontactAddressdata data in listResponse.AddressData)
             {
                 String[] employee = { data.Partneremployeeid, data.Firstname, data.Lastname };
                 ListViewItem viewItem = new ListViewItem(employee);
-                employeeListView.Items.Add(viewItem);
+                lv.Items.Add(viewItem);
             }
-            employeeListView.Refresh();
-            employeeListView.FullRowSelect = true;
+            lv.Refresh();
+            lv.FullRowSelect = true;           
         }
+
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
@@ -503,6 +524,61 @@ namespace WindowsFormsApp1
                     TimerStart();
                 }
             }
+        }
+
+        private void Übersicht_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showVWButton_Click(object sender, EventArgs e)
+        {
+            prepareEmployeeList(employeeVWlist);
+        }
+
+        private void passwordListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoutVWButton_Click(object sender, EventArgs e)
+        {
+            controller.Logout();
+        }
+
+        private void endVWButton_Click(object sender, EventArgs e)
+        {
+            controller.Close();
         }
     }
 }

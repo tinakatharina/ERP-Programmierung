@@ -120,7 +120,29 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label19.Text" xml:space="preserve">
+    <value>********************** Hinweis ******************
+
+
+Hier können Sie einen neuen Ansprechpartner
+für einen Lieferanten oder Kunden anlegen.
+Dazu ist es nur notwendig die Kunden oder 
+Lieferanten-ID anzugeben.
+
+
+
+
+
+Wissen Sie nicht mehr, ob ein bestimmter 
+Ansprechpartner zu einem Lieferanten oder 
+einem Kunden gehört, können Sie die ID in
+der Liste auswählen und den "Prüfen"-Button
+betätigen.</value>
+  </data>
   <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>130, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>
