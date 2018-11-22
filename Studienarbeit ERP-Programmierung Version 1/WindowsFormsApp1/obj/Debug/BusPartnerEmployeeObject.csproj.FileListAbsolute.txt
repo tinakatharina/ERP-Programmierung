@@ -60,3 +60,17 @@ C:\Users\tina8\Documents\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung
 C:\Users\tina8\Documents\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CopyComplete
 C:\Users\tina8\Documents\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\tina8\Documents\ERP\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csprojAssemblyReference.cache
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogIn.resources
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainView.resources
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.GenerateResource.cache
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CoreCompileInputs.cache
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\sapnco.dll
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\bin\Debug\sapnco_utils.dll
+C:\Users\tina8\Documents\ERP3\ERP-Programmierung\Studienarbeit ERP-Programmierung Version 1\WindowsFormsApp1\obj\Debug\BusPartnerEmployeeObject.csproj.CopyComplete

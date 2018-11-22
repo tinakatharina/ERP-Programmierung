@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
             client.Open();
         }
 
-
         /************************* lesende Zugriffe **************************/
 
 
@@ -177,42 +176,6 @@ namespace WindowsFormsApp1
 
             func.Invoke(destination);
         }
-
-        /*   public void createUser(string customer, String vendor)
-           {
-                 makeConnection();
-
-                 var func = repo.CreateFunction("BAPI_PARTNEREMPLOYEE_CREATE");
-                 Console.WriteLine("Metadaten+++++: " + func.Metadata);
-
-                 func.SetValue("CUSTOMER", "2000");
-                 func.SetValue("VENDOR", "");
-                 //func.SetValue("PARTNEREMPLOYEE", "100");
-                 //func.SetValue("PARTNEREMPLOYEEID", "1");
-                 //func.SetValue("PARTNEREMPLOYEEID", employeeId);
-
-                 func.Invoke(destination);
-
-                 Console.WriteLine(func.ToString());
-
-           }
-
-           public void editUser(string employeeID)
-           {
-               makeConnection();
-
-               var func = repo.CreateFunction("BAPI_PARTNEREMPLOYEE_EDIT");
-               Console.WriteLine("Metadaten+++++: " + func.Metadata);
-
-               func.SetValue("PARTNEREMPLOYEEID", "3");
-               //func.SetValue("PARTNEREMPLOYEE", "100");
-               //func.SetValue("PARTNEREMPLOYEEID", "1");
-               //func.SetValue("PARTNEREMPLOYEEID", employeeId);
-
-               func.Invoke(destination);
-
-               Console.WriteLine(func.ToString());
-           }
-           */
+        
     }
 }
