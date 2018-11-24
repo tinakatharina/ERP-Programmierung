@@ -208,10 +208,23 @@ namespace WindowsFormsApp1
 
         /******************************************************** Passwort-Tab **************************************************************************************/
 
+        /*leert alle Felder und macht diese nicht editierbar*/
+        private void MakeUnable()
+        {
+            pwIDBox.Text =  "";
+            altPWBox.Text = "";
+            passwordBox.Text = "";
+            passwordWdhBox.Text = "";
+            pwIDBox.ReadOnly = true;
+            altPWBox.ReadOnly = true;
+            passwordBox.ReadOnly = true;
+            passwordWdhBox.ReadOnly = true;
+        }  
             
         /*ermöglicht das Passwortändern, nachdem der 'Ändern'-Button betätigt wurde*/
         private void changePWButton_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
@@ -341,6 +354,7 @@ namespace WindowsFormsApp1
         /*Ermöglicht das Passwort-Ändern, nachdem der 'Ändern'-Button gedrückt wurde*/
         private void createButtonPW_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             pwIDBox.ReadOnly = false;
             confirmPWButton.Enabled = true;
@@ -352,6 +366,7 @@ namespace WindowsFormsApp1
         /*Überprüfung, ob ein Passwort zu dem ausgewählten Nutzer gehört*/
         private void button1_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
@@ -373,6 +388,7 @@ namespace WindowsFormsApp1
         /*löscht den ausgewählten Nutzer aus der Passwort-Datenbank*/
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
@@ -406,6 +422,7 @@ namespace WindowsFormsApp1
         /*Die Passwort-Liste wird gefüllt, nachdem der 'Anzeigen'-Button gedrückt wurde*/
         private void showPWButton_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             pwInfoLabel.Text = "Die Liste wird vorbereitet,\ndies dauert einen Moment...";
             TimerStart();
@@ -415,6 +432,7 @@ namespace WindowsFormsApp1
         /*generiert ein Initialpasswort, nachdem der 'Generieren'-Button betätigt wurde*/
         private void initButton_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
@@ -433,6 +451,7 @@ namespace WindowsFormsApp1
         /*Füllt die Boxen mit den passenden Daten zu dem ausgwählten Eintrag*/
         private void pwInfoButton_Click(object sender, EventArgs e)
         {
+            MakeUnable();
             TimerStop();
             if (passwordListView.SelectedItems.Count > 0)
             {
