@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void loginButton_click(object sender, EventArgs e)
+        private void LoginButton_click(object sender, EventArgs e)
         {
             BusPartnerEmployeeController controller = new BusPartnerEmployeeController();
             controller.Login();

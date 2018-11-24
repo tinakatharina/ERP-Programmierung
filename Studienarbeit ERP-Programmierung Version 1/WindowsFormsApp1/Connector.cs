@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         private RfcRepository repo;
         private RfcDestination destination;
 
-        public void makeConnection()
+        public void MakeConnection()
         {
             var parameters = new RfcConfigParameters
             {
@@ -36,12 +36,12 @@ namespace WindowsFormsApp1
             repo = destination.Repository;
         }
 
-        public RfcRepository getRepo()
+        public RfcRepository GetRepo()
         {
             return repo;
         }
 
-        public RfcDestination getDes()
+        public RfcDestination GetDes()
         {
             return destination;
         }

@@ -15,9 +15,9 @@ namespace WindowsFormsApp1
         public BusPartnerEmployeeDataProvider()
         {
             Login();
-            connect.makeConnection();
-            repo = connect.getRepo();
-            destination = connect.getDes();
+            connect.MakeConnection();
+            repo = connect.GetRepo();
+            destination = connect.GetDes();
         }
 
         //Login mit wsdl-Datei
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
         /*Passwort Check:
         * Hier wird geprüft ob das eingegebene Passwort zum Nutzer gehört*/
-        public bool checkPassword(string id, string password)
+        public bool CheckPassword(string id, string password)
         {
             bool worked = false;
             BusPartnerEmployee.BusPartnerEmployeeCheckPassword check = new BusPartnerEmployeeCheckPassword();
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
 
         /*Passwort-Details ausgeben:
          * Hier werden alle Details zu einem in der Passwort-Datenbank angelegten Nutzer ausgegeben*/
-        public BusPartnerEmployeeGetPasswordResponse getPasswort(string employeeId)
+        public BusPartnerEmployeeGetPasswordResponse GetPasswort(string employeeId)
         {
             BusPartnerEmployee.BusPartnerEmployeeGetPassword passwort = new BusPartnerEmployeeGetPassword();
             BusPartnerEmployee.BusPartnerEmployeeGetPasswordResponse response;
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
 
         /*Mitarbeiter Check:
          * Hier wird getestet, ob ein Nutzer mit der eingegeben ID existiert*/
-        public BusPartnerEmployeeCheckExistenceResponse checkExistence(string id)
+        public BusPartnerEmployeeCheckExistenceResponse CheckExistence(string id)
         {
             BusPartnerEmployee.BusPartnerEmployeeCheckExistence check = new BusPartnerEmployeeCheckExistence();
             BusPartnerEmployee.BusPartnerEmployeeCheckExistenceResponse response;
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1
 
         /*Passwort ändern:
          *Hier wird das Passwort des ausgewählten Nutzers druch ein neues Passwort ersetzt*/
-        public bool changePassword(String newPW, String verify, String employeeID, String oldPW)
+        public bool ChangePassword(String newPW, String verify, String employeeID, String oldPW)
         {
             bool worked = true;
 
@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
         /*Passwort erstellen:
          *Hier wird ein neuer Nutzer in die Passwort-Datenbank angelegt, 
          *allerdings besitzt dieser noch kein Passwort */
-        public void createPassword(string employeeId)
+        public void CreatePassword(string employeeId)
         {
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_CREATE_PW_RE");
             func.SetValue("PARTNEREMPLOYEEID", employeeId);
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
         /*Init-Passwort generieren:
          * Hier wird ein Initial-Passwort zu einem bereits in der Passwort-Datenbank erstellten Nutzer
          * neu generiert */
-        public void generatePassword(string employeeId)
+        public void GeneratePassword(string employeeId)
         {
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_INITPASSWORD");
             func.SetValue("PARTNEREMPLOYEEID", employeeId);
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
 
         /*Passwort löschen:
          * Der Nutzer wird aus der Passwort-Datenbank gelöscht*/
-        public void deletePassword(string employeeId)
+        public void DeletePassword(string employeeId)
         {
             var func = repo.CreateFunction("BAPI_PAR_EMPLOYEE_DELETE_PW_RE");
             func.SetValue("PARTNEREMPLOYEEID", employeeId);

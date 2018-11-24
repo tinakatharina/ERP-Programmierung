@@ -51,7 +51,7 @@
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "In SAP einloggen";
             this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_click);
             // 
             // loginPicture
             // 

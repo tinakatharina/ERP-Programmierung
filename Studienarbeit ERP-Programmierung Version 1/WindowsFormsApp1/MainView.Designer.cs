@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.Passwörter = new System.Windows.Forms.TabControl();
             this.Übersicht = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -215,7 +215,7 @@
             this.toolTip1.SetToolTip(this.serachButton, "Klicken Sie diesen Button, wenn Sie die nächste\r\nverfügbare ID angezeigt haben wo" +
         "llen.");
             this.serachButton.UseVisualStyleBackColor = false;
-            this.serachButton.Click += new System.EventHandler(this.serachButton_Click);
+            this.serachButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // nextIDBox
             // 
@@ -239,7 +239,7 @@
             this.toolTip1.SetToolTip(this.pruefenButton, "Klicken Sie diesen Button, wenn sie überprüfen möchten,\r\nob der PartnerEmployee v" +
         "orhanden ist, indem Sie dessen ID eingeben");
             this.pruefenButton.UseVisualStyleBackColor = false;
-            this.pruefenButton.Click += new System.EventHandler(this.prüfenButtonClick);
+            this.pruefenButton.Click += new System.EventHandler(this.PrüfenButtonClick);
             // 
             // textBox11
             // 
@@ -506,7 +506,7 @@
             this.logoutButton.Text = "Ausloggen";
             this.toolTip1.SetToolTip(this.logoutButton, "Klicken Sie diesen Button, wenn Sie sich ausloggen möchten");
             this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // closeButton
             // 
@@ -520,7 +520,7 @@
             this.closeButton.Text = "Beenden";
             this.toolTip1.SetToolTip(this.closeButton, "Klicken Sie diesen Button, wenn Sie das Programm beenden möchten");
             this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // lastnameLabel
             // 
@@ -611,7 +611,7 @@
             this.toolTip1.SetToolTip(this.detailsButton, "Klicken Sie diesen Button, wenn Sie sich Details zu der Liste anzeigen lassen wol" +
         "len \r\n(Das bedeutet, es muss vorher die Liste angezeigt werden! :) )");
             this.detailsButton.UseVisualStyleBackColor = false;
-            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            this.detailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
             // getListButton
             // 
@@ -626,7 +626,7 @@
             this.toolTip1.SetToolTip(this.getListButton, "Klicken Sie diesen Button wenn Sie sich die Übersicht, \r\nüber alle Einträge anzei" +
         "gen lassen möchten.");
             this.getListButton.UseVisualStyleBackColor = false;
-            this.getListButton.Click += new System.EventHandler(this.getListButton_Click);
+            this.getListButton.Click += new System.EventHandler(this.GetListButton_Click);
             // 
             // listEmployeeLabel
             // 
@@ -705,7 +705,7 @@
             this.toolTip2.SetToolTip(this.button1, "Wenn Sie diesen Button drücken,\r\nkönnen Sie testen, ob ein Passwort zu dem in\r\nde" +
         "r Liste ausgewählten Nutzer gehört.");
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // confirmPWButton
             // 
@@ -721,7 +721,7 @@
             this.toolTip1.SetToolTip(this.confirmPWButton, "Benutzen Sie diesen Button, wenn Sie Ihre Eingaben in den oberen Feldern\r\nbestäti" +
         "gen möchten (vorher muss der Ändern oder Anlegen Button genutzt worden sein)");
             this.confirmPWButton.UseVisualStyleBackColor = false;
-            this.confirmPWButton.Click += new System.EventHandler(this.confirmPWButton_Click_1);
+            this.confirmPWButton.Click += new System.EventHandler(this.ConfirmPWButton_Click_1);
             // 
             // altPwLabel
             // 
@@ -995,9 +995,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(893, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 25);
+            this.label1.Size = new System.Drawing.Size(215, 25);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Password Informationen";
+            this.label1.Text = "Passwort Informationen";
             // 
             // pwInfo_Button
             // 
@@ -1012,13 +1012,13 @@
             this.toolTip2.SetToolTip(this.pwInfo_Button, "Hier können Sie sich die Passwortinformationen \r\nzu einen Passwort aus der Liste " +
         "anzeigen lassen.");
             this.pwInfo_Button.UseVisualStyleBackColor = false;
-            this.pwInfo_Button.Click += new System.EventHandler(this.pwInfoButton_Click);
+            this.pwInfo_Button.Click += new System.EventHandler(this.PwInfoButton_Click);
             // 
             // passwordListView
             // 
             this.passwordListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.passwordListView.Location = new System.Drawing.Point(485, 62);
             this.passwordListView.Name = "passwordListView";
             this.passwordListView.Size = new System.Drawing.Size(357, 471);
@@ -1036,7 +1036,7 @@
             this.logoutPWButton.TabIndex = 17;
             this.logoutPWButton.Text = "Ausloggen";
             this.logoutPWButton.UseVisualStyleBackColor = false;
-            this.logoutPWButton.Click += new System.EventHandler(this.logoutPWButton_Click);
+            this.logoutPWButton.Click += new System.EventHandler(this.LogoutPWButton_Click);
             // 
             // closePWButton
             // 
@@ -1049,7 +1049,7 @@
             this.closePWButton.TabIndex = 16;
             this.closePWButton.Text = "Beenden";
             this.closePWButton.UseVisualStyleBackColor = false;
-            this.closePWButton.Click += new System.EventHandler(this.closePWButton_Click);
+            this.closePWButton.Click += new System.EventHandler(this.ClosePWButton_Click);
             // 
             // pWLabel
             // 
@@ -1100,7 +1100,7 @@
             this.toolTip2.SetToolTip(this.changePWButton, "Wenn Sie diesen Button drücken können Sie ein altes Passwort ändern.\r\nVorher müss" +
         "en sie aber ein Passwort aus der Liste auswählen");
             this.changePWButton.UseVisualStyleBackColor = false;
-            this.changePWButton.Click += new System.EventHandler(this.changePWButton_Click);
+            this.changePWButton.Click += new System.EventHandler(this.ChangePWButton_Click);
             // 
             // createButtonPW
             // 
@@ -1115,7 +1115,7 @@
             this.toolTip1.SetToolTip(this.createButtonPW, "Wenn Sie diesen Button drücken, können Sie einen Nutzer der \r\nPasswort-Datenbank " +
         "hinzufügen, dessen Passwort zunächst leer ist. ");
             this.createButtonPW.UseVisualStyleBackColor = false;
-            this.createButtonPW.Click += new System.EventHandler(this.createButtonPW_Click);
+            this.createButtonPW.Click += new System.EventHandler(this.CreateButtonPW_Click);
             // 
             // initButton
             // 
@@ -1131,7 +1131,7 @@
         "anlegen lassen, welches Sie nicht selbst erzeugen müssen.\r\nDazu müssen Sie den N" +
         "utzer in der Liste auswählen. ");
             this.initButton.UseVisualStyleBackColor = false;
-            this.initButton.Click += new System.EventHandler(this.initButton_Click);
+            this.initButton.Click += new System.EventHandler(this.InitButton_Click);
             // 
             // deleteButton
             // 
@@ -1146,7 +1146,7 @@
             this.toolTip1.SetToolTip(this.deleteButton, "Wenn Sie diesen Button drücken, können Sie ein Passwort löschen.\r\nVorher müssen S" +
         "ie aber ein Passwort aus der Liste wählen.");
             this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // showPWButton
             // 
